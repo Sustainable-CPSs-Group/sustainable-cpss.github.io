@@ -241,7 +241,12 @@ exclude:
   - lighthouse_results/
   - package.json
   - package-lock.json
-  - _pages/about_einstein.md
+  - _pages/person_chakraborty.md
+  - _pages/person_herkersdorf.md
+  - _pages/person_caccamo.md
+  - _pages/person_wild.md
+  - _pages/person_gaiardelli.md
+  - _pages/person_kindt.md
   - purgecss.config.js
   - README.md
   - readme_preview/
