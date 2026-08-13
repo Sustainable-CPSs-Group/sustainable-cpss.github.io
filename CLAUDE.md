@@ -16,12 +16,11 @@ docker compose logs -f                        # watch the rebuild
 docker compose down
 npx prettier . --write                        # CI gate: prettier.yml
 npm run lint:style-contract                   # advisory only — no longer gated by CI
-bundle exec al-folio upgrade audit            # what upstream al-folio has that we don't (also runs weekly in CI)
-bundle exec al-folio upgrade apply --safe     # deterministic codemods
+docker compose exec jekyll bundle exec al-folio upgrade audit          # what upstream al-folio has that we don't (also runs weekly in CI)
+docker compose exec jekyll bundle exec al-folio upgrade apply --safe   # deterministic codemods
 ```
 
-Ruby and Bundler are deliberately not installed on the maintainer's host; the `bundle exec`
-commands above run inside the container via `docker compose exec jekyll bundle exec …`.
+Ruby and Bundler are deliberately not installed on the maintainer's host, hence the `docker compose exec jekyll` prefix.
 
 ## Optional toolchains
 
