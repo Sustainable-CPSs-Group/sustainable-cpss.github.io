@@ -1,6 +1,6 @@
 ## TUM-IAS Postdoctoral Researchers
 
-**Dr. Sebastiano Gaiardelli**
+**Dr. Sebastiano Gaiardelli**  
 Postdoctoral Researcher, Chair of Cyber-Physical Systems in Production Engineering,
 TUM School of Engineering and Design
 

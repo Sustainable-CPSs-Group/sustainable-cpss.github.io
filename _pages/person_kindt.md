@@ -1,4 +1,4 @@
-**Dr.-Ing. Philipp H. Kindt**
+**Dr.-Ing. Philipp H. Kindt**  
 Postdoctoral Researcher, Chair of Cyber-Physical Systems in Production Engineering,
 TUM School of Engineering and Design
 

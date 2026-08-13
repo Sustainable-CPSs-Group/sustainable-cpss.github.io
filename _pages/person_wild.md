@@ -1,4 +1,4 @@
-**Dr.-Ing. Thomas Wild**
+**Dr.-Ing. Thomas Wild**  
 Senior Researcher, Chair of Integrated Systems, TUM School of Computation, Information and
 Technology
 

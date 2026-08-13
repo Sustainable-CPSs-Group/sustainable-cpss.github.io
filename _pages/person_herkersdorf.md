@@ -1,6 +1,6 @@
 ## Hosts and Senior Researchers
 
-**Prof. Dr. sc. techn. Andreas Herkersdorf**
+**Prof. Dr. sc. techn. Andreas Herkersdorf**  
 Chair of Integrated Systems, TUM School of Computation, Information and Technology
 
 Andreas Herkersdorf's research covers architectures and coprocessors for application-specific

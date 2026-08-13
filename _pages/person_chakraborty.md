@@ -1,6 +1,6 @@
 ## Dieter Schwarz Courageous Research Grant Holder
 
-**Prof. Dr. sc. Samarjit Chakraborty**
+**Prof. Dr. sc. Samarjit Chakraborty**  
 William R. Kenan, Jr. Distinguished Professor, Department of Computer Science,
 University of North Carolina at Chapel Hill
 

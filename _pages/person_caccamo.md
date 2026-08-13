@@ -1,4 +1,4 @@
-**Prof. Dr. Marco Caccamo**
+**Prof. Dr. Marco Caccamo**  
 Alexander von Humboldt Professor, Chair of Cyber-Physical Systems in Production Engineering,
 TUM School of Engineering and Design
 
