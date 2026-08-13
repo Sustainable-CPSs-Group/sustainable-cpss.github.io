@@ -1,9 +1,35 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
+"DATE":
+  url: https://www.date-conference.com/
   color: "#00369f"
 
-"PhysRev":
-  url: https://journals.aps.org/
+"DAC":
+  url: https://www.dac.com/
+  color: "#8b1a1a"
 
-"Vision":
-  color: "#009f36"
+"RTSS":
+  url: http://2026.rtss.org/
+  color: "#004d40"
+
+"RTAS":
+  url: http://2026.rtas.org/
+  color: "#00695c"
+
+"EMSOFT":
+  url: https://esweek.org/emsoft/
+  color: "#4a148c"
+
+"ICCAD":
+  url: https://iccad.com/
+  color: "#1a237e"
+
+"ETFA":
+  url: https://2026.ieee-etfa.org/
+  color: "#bf360c"
+
+"INDIN":
+  url: https://ieee-ies.org/conferences/indin/
+  color: "#e65100"
+
+"IECON":
+  url: https://ieee-ies.org/conferences/iecon/
+  color: "#ff6f00"

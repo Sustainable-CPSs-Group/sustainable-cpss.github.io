@@ -1,14 +1,7 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - Sustainable-CPSs-Group
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - Sustainable-CPSs-Group/Sustainable-CPSs-Group.github.io

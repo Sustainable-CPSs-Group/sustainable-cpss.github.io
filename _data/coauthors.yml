@@ -1,34 +1,23 @@
-"adams":
-  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
-    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
+"chakraborty":
+  - firstname: ["Samarjit", "S."]
+    url: https://cs.unc.edu/person/samarjit-chakraborty/
 
-"podolsky":
-  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
-    url: https://en.wikipedia.org/wiki/Boris_Podolsky
+"herkersdorf":
+  - firstname: ["Andreas", "A."]
+    url: https://www.ce.cit.tum.de/en/lis/persons/management/andreas-herkersdorf/
 
-"rosen":
-  - firstname: ["Nathan", "N."]
-    url: https://en.wikipedia.org/wiki/Nathan_Rosen
+"caccamo":
+  - firstname: ["Marco", "M."]
+    url: https://rtsl.cps.mw.tum.de/personal_page/mcaccamo/
 
-"bach":
-  - firstname: ["Johann Sebastian", "J. S."]
-    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
+"wild":
+  - firstname: ["Thomas", "T."]
+    url: https://www.ce.cit.tum.de/en/lis/persons/management/thomas-wild/
 
-  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
-    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
+"gaiardelli":
+  - firstname: ["Sebastiano", "S."]
+    url: https://sbgaia.github.io/
 
-"przibram":
-  - firstname: ["Karl"]
-    url: https://link.springer.com/article/10.1007/s00016-019-00242-z
-
-"schrodinger":
-  - firstname: ["Erwin"]
-    url: https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger
-
-"lorentz":
-  - firstname: ["Hendrik Antoon"]
-    url: https://en.wikipedia.org/wiki/Hendrik_Lorentz
-
-"planck":
-  - firstname: ["Max"]
-    url: https://en.wikipedia.org/wiki/Max_Planck
+"kindt":
+  - firstname: ["Philipp", "P.", "Philipp H."]
+    url: https://scholar.google.de/citations?user=3XIV2pgAAAAJ
