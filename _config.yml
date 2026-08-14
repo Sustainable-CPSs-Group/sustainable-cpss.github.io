@@ -5,15 +5,14 @@
 title: Sustainable CPS # the website title (if blank, full name will be used instead)
 first_name:
 middle_name:
-last_name:
+last_name: Sustainable Cyber-Physical Systems Focus Group
 contact_note: >
   For general enquiries about the Focus Group, write to Sebastiano Gaiardelli.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   A TUM Institute for Advanced Study Focus Group developing models, algorithms and tools
   for sustainable cyber-physical systems.
 footer_text: >
-  <a href="https://www.ias.tum.de/en/ias/research-areas/control-theory-systems-engineering-and-robotics/sustainable-cyber-physical-systems/" target="_blank">Sustainable Cyber-Physical Systems</a>
-  Focus Group, <a href="https://www.ias.tum.de/" target="_blank">TUM Institute for Advanced Study</a>.
+  Part of the <a href="https://www.ias.tum.de/" target="_blank">TUM Institute for Advanced Study</a>.
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank">al-folio</a>.
 keywords: sustainable cyber-physical systems, embedded systems, real-time systems, energy harvesting, edge AI, TUM-IAS
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
