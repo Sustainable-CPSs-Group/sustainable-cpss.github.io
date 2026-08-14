@@ -2,7 +2,7 @@
 
 **Read [`AGENTS.md`](../AGENTS.md) first — it is the authoritative entry point for all coding agents in this repo.** It carries the change-routing table, the stop sign for gem-owned paths, the three silent failure modes, and the validated command set. This file previously duplicated that content; it is now a pointer so the rules cannot drift apart.
 
-In short: `al-folio` v1.x is a **thin Jekyll starter, not a theme**. It owns starter wiring (`Gemfile`, `_config.yml`), example content, docs, integration tests, and visual parity tests. All runtime — layouts, includes, Sass, Liquid tags, filters, feature JS — lives in versioned gems under [`al-org-dev`](https://github.com/al-org-dev). Route runtime changes to the owning gem.
+In short: `al-folio` v1.x is a **thin Jekyll starter, not a theme**. It owns starter wiring (`Gemfile`, `_config.yml`), example content, and docs. The `test/integration_*.sh` scripts and `test/visual/` still exist on disk and are runnable by hand, but no CI workflow invokes them any more. All runtime — layouts, includes, Sass, Liquid tags, filters, feature JS — lives in versioned gems under [`al-org-dev`](https://github.com/al-org-dev). Route runtime changes to the owning gem.
 
 ## Where to look
 
@@ -24,4 +24,4 @@ In short: `al-folio` v1.x is a **thin Jekyll starter, not a theme**. It owns sta
 
 ## CI expectations
 
-Keep these workflows aligned when changing starter behavior: `unit-tests.yml` (style contract plus all six `test/integration_*.sh` scripts), `visual-regression.yml`, `upgrade-check.yml`, `prettier.yml`, and `deploy.yml`.
+The live workflows are `broken-links-site.yml`, `codeql.yml`, `deploy.yml`, `prettier.yml`, `update-citations.yml` (manual trigger only), `update-tocs.yml`, and `upgrade-check.yml` (also runs weekly on a schedule). `unit-tests.yml` and `visual-regression.yml` were removed; `npm run lint:style-contract` and the `test/integration_*.sh` scripts still exist on disk but nothing invokes them automatically any more — run them by hand when your change touches that area.
