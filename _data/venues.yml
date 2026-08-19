@@ -1,3 +1,11 @@
+"ESL":
+  url: https://ieee-cas.org/publication/ieee-embedded-systems-letters
+  color: "#005f73"
+
+"RTCSA":
+  url: https://rtcsa.org/
+  color: "#6d28d9"
+
 "DATE":
   url: https://www.date-conference.com/
   color: "#00369f"
