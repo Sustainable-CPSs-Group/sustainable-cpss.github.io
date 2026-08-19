@@ -2,7 +2,7 @@
 layout: profiles
 permalink: /people/
 title: people
-description: the Sustainable Cyber-Physical Systems Focus Group
+description: the grant holder, the TUM hosts, and the postdoctoral researchers of the Focus Group
 nav: true
 nav_order: 2
 

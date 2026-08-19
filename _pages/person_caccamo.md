@@ -9,8 +9,10 @@ safe deep reinforcement learning for autonomous systems. He graduated summa cum 
 Engineering from the University of Pisa in 1997 and received his Ph.D. from Scuola Superiore
 Sant'Anna in 2002, then spent many years as a principal investigator at the University of Illinois
 at Urbana-Champaign. He received an NSF CAREER Award in 2003 and an Alexander von Humboldt
-Professorship in 2018, and is a Fellow of the IEEE and the AAIA. He is the second TUM host of this
-Focus Group.
+Professorship in 2018, and is a Fellow of the IEEE and the AAIA.
+
+He is the second TUM host of this Focus Group, which is based at his chair, and a co-author on our
+work on maintenance-free predictive maintenance.
 
 [Chair page](https://rtsl.cps.mw.tum.de/personal_page/mcaccamo/) &nbsp;•&nbsp;
 [TUM profile](https://www.professoren.tum.de/en/caccamo-marco)

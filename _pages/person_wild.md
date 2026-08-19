@@ -7,4 +7,6 @@ multicore processors, and traffic steering in edge networks. At the Chair of Int
 supervises theses and internships carried out in industry, and he is the EUROPRACTICE
 representative for the TUM city campus.
 
+He is a co-author on our work on maintenance-free predictive maintenance.
+
 [Chair page](https://www.ce.cit.tum.de/en/lis/persons/management/thomas-wild/)

@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Sustainable CPS # the website title (if blank, full name will be used instead)
+title: Sustainable Cyber-Physical Systems # the website title (if blank, full name will be used instead)
 first_name:
 middle_name:
 last_name: Sustainable Cyber-Physical Systems Focus Group
@@ -136,7 +136,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Sustainable CPS # blog_name will be displayed in your blog page
+blog_name: Sustainable Cyber-Physical Systems # blog_name will be displayed in your blog page
 blog_description: news and technical notes from the Focus Group
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
@@ -337,7 +337,7 @@ jekyll-archives:
       tags: "/blog/:type/:name/"
       categories: "/blog/:type/:name/"
 
-display_tags: ["announcements"] # these tags will be displayed on the front page of your blog
+display_tags: ["publications", "announcements"] # these tags will be displayed on the front page of your blog
 display_categories: [] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
