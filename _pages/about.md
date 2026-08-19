@@ -43,3 +43,7 @@ The Focus Group is funded by a **Dieter Schwarz Courageous Research Grant** held
 [Prof. Andreas Herkersdorf](/people/) (Chair of Integrated Systems) and
 [Prof. Marco Caccamo](/people/) (Chair of Cyber-Physical Systems in Production Engineering).
 It funds two postdoctoral researchers at the [TUM Institute for Advanced Study](https://www.ias.tum.de/).
+
+For enquiries about the Focus Group, write to
+[Philipp Kindt](mailto:philipp.kindt@tum.de) and
+[Sebastiano Gaiardelli](mailto:sebastiano.gaiardelli@tum.de).

@@ -39,14 +39,6 @@ profiles:
       <p>Arcisstraße 21, 80333 München</p>
       <p>thomas.wild@tum.de</p>
   - align: right
-    image: people/gaiardelli.jpg
-    content: person_gaiardelli.md
-    image_circular: false
-    more_info: >
-      <p>Room 2105</p>
-      <p>Boltzmannstraße 15, 85748 Garching</p>
-      <p>sebastiano.gaiardelli@tum.de</p>
-  - align: left
     image: people/kindt.jpg
     content: person_kindt.md
     image_circular: false
@@ -54,4 +46,12 @@ profiles:
       <p>Rooms 2105 / N2117</p>
       <p>Boltzmannstraße 15, 85748 Garching</p>
       <p>philipp.kindt@tum.de</p>
+  - align: left
+    image: people/gaiardelli.jpg
+    content: person_gaiardelli.md
+    image_circular: false
+    more_info: >
+      <p>Room 2105</p>
+      <p>Boltzmannstraße 15, 85748 Garching</p>
+      <p>sebastiano.gaiardelli@tum.de</p>
 ---
