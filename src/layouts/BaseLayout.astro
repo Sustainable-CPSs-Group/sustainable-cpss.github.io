@@ -1,0 +1,84 @@
+---
+import "katex/dist/katex.min.css";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  active?: string;
+}
+
+const {
+  title,
+  description = "Researching cyber-physical systems that are sustainable to build, operate and maintain.",
+  active,
+} = Astro.props;
+const pageTitle = title ? `${title} · Sustainable CPS` : "Sustainable Cyber-Physical Systems";
+const nav = [
+  ["Research", "/research/", "research"],
+  ["People", "/people/", "people"],
+  ["Publications", "/publications/", "publications"],
+  ["Updates", "/blog/", "updates"],
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#092f2a" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="/" aria-label="Sustainable Cyber-Physical Systems home">
+          <svg viewBox="0 0 44 44" role="img" aria-hidden="true">
+            <path d="M22 3a19 19 0 1 0 19 19" />
+            <path d="M22 11a11 11 0 1 0 11 11" />
+            <path d="M22 18a4 4 0 1 0 4 4" />
+            <path d="M22 3v15M41 22H26M35.5 8.5 26 18" />
+          </svg>
+          <span><b>Sustainable</b><small>Cyber-Physical Systems</small></span>
+        </a>
+        <nav aria-label="Primary navigation">
+          {nav.map(([label, href, key]) => <a href={href} aria-current={active === key ? "page" : undefined}>{label}</a>)}
+        </nav>
+        <a class="header-link" href="https://github.com/Sustainable-CPSs-Group">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <p class="eyebrow">Sustainable Cyber-Physical Systems</p>
+          <p>Systems that use less, last longer, and understand their own limits.</p>
+        </div>
+        <div>
+          <p class="footer-heading">Hosted at</p>
+          <a href="https://www.ias.tum.de/">TUM Institute for Advanced Study</a>
+          <a href="https://www.ce.cit.tum.de/en/lis/">Chair of Integrated Systems</a>
+          <a href="https://rtsl.cps.mw.tum.de">Chair of CPS in Production Engineering</a>
+        </div>
+        <div>
+          <p class="footer-heading">Explore</p>
+          <a href="/research/">Research agenda</a>
+          <a href="/publications/">Publications</a>
+          <a href="/blog/">Updates</a>
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© {new Date().getFullYear()} Sustainable CPS Focus Group</span>
+        <span>Built with Astro · Content in Markdown &amp; BibTeX</span>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,43 +1,39 @@
-# Sustainable Cyber-Physical Systems Focus Group
+# Sustainable Cyber-Physical Systems
 
-This repository is the source for the website of the **Sustainable Cyber-Physical Systems**
-Focus Group at the [TUM Institute for Advanced Study](https://www.ias.tum.de/), funded by a
-Dieter Schwarz Courageous Research Grant. The group develops models, algorithms and tools for
-sustainable cyber-physical systems: energy-efficient and batteryless designs, lightweight but
-provably safe autonomy, edge-first computing, and systems that adapt themselves and warn before
-they fail.
+Website for the Sustainable Cyber-Physical Systems Focus Group at the TUM Institute for Advanced Study.
 
-**Live site:** <https://sustainable-cpss-group.github.io/>
+The site is built with Astro. Contributors only need Docker; Node.js and npm do not need to be installed on the host.
 
-## Local development
-
-Ruby and Bundler are **not** required on the host — everything runs through Docker.
+## Run the site
 
 ```bash
-docker compose up -d      # start the dev server
-# open http://localhost:8080/
-docker compose down       # stop it
+docker compose up --build
 ```
 
-`docker compose logs -f` follows the build/rebuild output. Config changes (`_config.yml`) are
-picked up by an in-container watcher and restart Jekyll automatically; other files hot-reload.
+Open <http://localhost:4321>. Changes to source and content files are reloaded automatically.
 
-## Where things live
+Stop the server with `Ctrl+C`, then remove the container with:
 
-- `_pages/` — static pages (about, research, people, publications, …)
-- `_news/` — short news/announcement items shown on the homepage
-- `_posts/` — blog posts
-- `_bibliography/papers.bib` — the publication list
-- `_data/` — structured data (socials, coauthors, generated citation counts, …)
-- `assets/img/people/` — profile photos
+```bash
+docker compose down
+```
 
-## For coding agents
+## Validate a change
 
-If you are an AI coding agent working in this repository, start with
-[`AGENTS.md`](AGENTS.md) — it is the authoritative entry point for change routing, ownership
-boundaries, and the validated local command set.
+```bash
+docker compose run --rm site npm run ci
+```
 
-## Credits
+This runs Astro's type/content checks and a production build, entirely inside Docker.
 
-Built with [Jekyll](https://jekyllrb.com/) and the [al-folio](https://github.com/alshedivat/al-folio)
-theme.
+## Edit content
+
+- Pages: `src/content/pages/`
+- People: `src/content/people/`
+- Updates: `src/content/posts/`
+- News: `src/content/news/`
+- Publications: `src/data/publications.bib`
+- Post-specific references: `src/content/references/`
+- Images: `public/assets/img/`
+
+See [AUTHORING.md](AUTHORING.md) for examples covering images, equations, and citations.

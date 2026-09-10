@@ -1,0 +1,18 @@
+---
+import { getEntry, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageIntro from "../../components/PageIntro.astro";
+const page = await getEntry("pages", "research");
+if (!page) throw new Error("Missing research page content");
+const { Content, headings } = await render(page);
+---
+<BaseLayout title="Research" description={page.data.description} active="research">
+  <PageIntro eyebrow="Research agenda" title="Designing for the whole lifetime." description={page.data.description} />
+  <section class="section shell content-grid">
+    <article class="prose"><Content /></article>
+    <aside class="research-nav" aria-label="On this page">
+      <p class="eyebrow">Directions</p>
+      {headings.filter((heading) => heading.depth === 2).map((heading) => <a href={`#${heading.slug}`}>{heading.text}</a>)}
+    </aside>
+  </section>
+</BaseLayout>

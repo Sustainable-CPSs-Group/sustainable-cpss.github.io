@@ -1,3 +1,4 @@
-_site/
-.git/
-assets/
+node_modules
+dist
+.astro
+.git

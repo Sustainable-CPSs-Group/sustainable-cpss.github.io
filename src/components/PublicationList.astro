@@ -1,0 +1,27 @@
+---
+import { formatAuthors, venue, type BibEntry } from "../lib/bibtex";
+interface Props { entries: BibEntry[]; compact?: boolean }
+const { entries, compact = false } = Astro.props;
+---
+<div class:list={["publication-list", { compact }]}>
+  {entries.map((entry) => (
+    <article class="publication" id={`ref-${entry.key}`} data-publication={`${entry.fields.title} ${entry.fields.author} ${entry.fields.year}`.toLowerCase()}>
+      <div class="pub-year">{entry.fields.year}</div>
+      <div>
+        <div class="pub-meta"><span>{entry.fields.abbr || entry.type}</span>{venue(entry)}</div>
+        <h3>{entry.fields.title}</h3>
+        <p class="pub-authors">{formatAuthors(entry.fields.author)}</p>
+        {entry.fields.note && <p class="pub-note">{entry.fields.note}</p>}
+        <div class="pub-actions">
+          {entry.fields.doi && <a href={`https://doi.org/${entry.fields.doi}`}>DOI</a>}
+          {entry.fields.url && <a href={entry.fields.url}>Publisher</a>}
+          {entry.fields.pdf && <a href={entry.fields.pdf}>PDF</a>}
+          <details>
+            <summary>BibTeX</summary>
+            <pre><code>{`@${entry.type}{${entry.key},\n${Object.entries(entry.fields).map(([key, value]) => `  ${key} = {${value}}`).join(",\n")}\n}`}</code></pre>
+          </details>
+        </div>
+      </div>
+    </article>
+  ))}
+</div>
