@@ -30,7 +30,7 @@ Leave the terminal running while you edit. Saved changes to text, images, and st
 | What you want to change | File or folder |
 | --- | --- |
 | Homepage introduction | `src/content/pages/about.md` |
-| Research description | `src/content/pages/research.md` |
+| Research description and homepage research areas | `src/content/pages/research.md` |
 | People and biographies | `src/content/people/` |
 | Research posts | `src/content/posts/` |
 | Short news announcements | `src/content/news/` |

@@ -13,14 +13,11 @@ const { Content } = await render(about);
 const posts = (await getCollection("posts")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 2);
 const news = (await getCollection("news")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
 const selectedPublications = parseBibtex(publicationsRaw).filter((entry) => entry.fields.selected === "true");
-const directions = [
-  ["Energy-efficient and batteryless operation", "We study how devices can sense, compute, and communicate when harvested energy is only intermittently available."],
-  ["Safe autonomy with lightweight machine learning", "We investigate how small learning models can be used in autonomous systems with verifiable safety guarantees."],
-  ["Edge computing", "We examine which tasks can run on the device and when remote computation is worth the energy and delay."],
-  ["Self-adaptation and early failure warning", "We develop ways to detect changes in system behaviour and adapt operation before a fault causes downtime."],
-];
+const research = await getEntry("pages", "research");
+if (!research) throw new Error("Missing research page content");
+const directions = research.data.areas;
 ---
-<BaseLayout>
+<BaseLayout description={about.data.description}>
   <header class="page-intro shell home-intro">
     <p class="eyebrow">TUM Institute for Advanced Study · Focus Group</p>
     <h1>{about.data.title}</h1>
@@ -39,7 +36,7 @@ const directions = [
   <section class="section shell">
     <div class="section-heading"><h2>Research areas</h2><a href={withBase("/research/")}>Research overview</a></div>
     <div class="research-areas">
-      {directions.map(([title, copy]) => <article><h3>{title}</h3><p>{copy}</p></article>)}
+      {directions.map(({ title, description }) => <article><h3>{title}</h3><p>{description}</p></article>)}
     </div>
   </section>
 

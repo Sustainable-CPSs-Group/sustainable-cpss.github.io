@@ -2,6 +2,20 @@
 
 Run `docker compose up --build` and open [localhost:4321](http://localhost:4321). Edit the source files with any text editor and save to see your changes.
 
+## Edit the research overview
+
+Edit `src/content/pages/research.md` to update the research page. Its `areas` list at the top also supplies the four research summaries on the homepage:
+
+```yaml
+areas:
+  - title: Low-power wireless and BLE
+    description: A short explanation of this research area.
+```
+
+Change each title and description as needed, keeping the indentation. The Markdown below the closing `---` supplies the full research page. When updating the text, distinguish published results, prototype experiments, and planned work.
+
+The homepage introduction and its search description are in `src/content/pages/about.md`.
+
 ## Write a post
 
 Create a Markdown file directly in `src/content/posts/`. Use a filename such as `2026-10-01-new-paper.md`:

@@ -33,7 +33,11 @@ const people = defineCollection({
 
 const pages = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
-  schema: z.object({ title: z.string(), description: z.string() }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    areas: z.array(z.object({ title: z.string(), description: z.string() })).default([]),
+  }),
 });
 
 const news = defineCollection({
