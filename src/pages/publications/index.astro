@@ -6,8 +6,8 @@ import { parseBibtex } from "../../lib/bibtex";
 import publicationsRaw from "../../data/publications.bib?raw";
 const publications = parseBibtex(publicationsRaw);
 ---
-<BaseLayout title="Publications" description="Publications from the Sustainable CPS Focus Group, generated from BibTeX." active="publications">
-  <PageIntro eyebrow="Publications" title="One bibliography. Always current." description="This page is generated directly from src/data/publications.bib. Add a BibTeX entry and it appears here automatically." />
+<BaseLayout title="Publications" description="Research publications from the Sustainable CPS Focus Group." active="publications">
+  <PageIntro title="Publications" description="Research papers from the group, with links to full texts and bibliographic records." />
   <section class="section shell" style="padding-top:0">
     <label for="publication-filter" class="eyebrow">Filter publications</label>
     <input class="filter" id="publication-filter" type="search" placeholder="Search by title, author, or year…" />

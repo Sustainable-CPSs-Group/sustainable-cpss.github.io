@@ -10,7 +10,7 @@ const { Content } = await render(person);
 ---
 <BaseLayout title={person.data.name} description={person.data.summary} active="people">
   <article class="section shell content-grid">
-    <div class="prose"><p class="eyebrow">{person.data.groupRole}</p><h1 style="font-size:clamp(2.8rem,6vw,5.5rem);margin-bottom:1rem">{person.data.name}</h1><p>{person.data.role}<br />{person.data.institution}</p><Content /><p class="link-list">{person.data.email && <a href={`mailto:${person.data.email}`}>Email</a>}{person.data.links.map((link) => <a href={link.url}>{link.label} ↗</a>)}</p></div>
-    <img src={person.data.image} alt={person.data.imageAlt} style="border-radius:1.25rem;box-shadow:var(--shadow)" />
+    <div class="prose"><p class="eyebrow">{person.data.groupRole}</p><h1 style="margin-bottom:1rem">{person.data.name}</h1><p>{person.data.role}<br />{person.data.institution}</p><Content /><p class="link-list">{person.data.email && <a href={`mailto:${person.data.email}`}>Email</a>}{person.data.links.map((link) => <a href={link.url}>{link.label} ↗</a>)}</p></div>
+    <img src={person.data.image} alt={person.data.imageAlt} />
   </article>
 </BaseLayout>

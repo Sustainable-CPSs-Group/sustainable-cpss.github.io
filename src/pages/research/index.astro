@@ -7,8 +7,8 @@ if (!page) throw new Error("Missing research page content");
 const { Content, headings } = await render(page);
 ---
 <BaseLayout title="Research" description={page.data.description} active="research">
-  <PageIntro eyebrow="Research agenda" title="Designing for the whole lifetime." description={page.data.description} />
-  <section class="section shell content-grid">
+  <PageIntro title="Research" description={page.data.description} />
+  <section class="section shell content-grid" style="padding-top:0">
     <article class="prose"><Content /></article>
     <aside class="research-nav" aria-label="On this page">
       <p class="eyebrow">Directions</p>
