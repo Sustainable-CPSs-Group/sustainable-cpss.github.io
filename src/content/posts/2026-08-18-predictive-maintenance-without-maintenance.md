@@ -1,63 +1,69 @@
 ---
 title: Predictive maintenance without maintenance
 date: 2026-08-18T10:00:00+02:00
-description: A sensor that needs its battery changed is just another maintenance task. What would it take to remove it?
+description: Our RTCSA demo studies small vibration classifiers as a step towards batteryless condition monitoring.
 tags: [publications, energy-harvesting, tinyml]
 hero: /assets/img/blog/predictive-maintenance/architecture.png
 heroAlt: Batteryless sensor architecture and fan case study pipeline
 bibliography: predictive-maintenance.bib
 ---
 
-Our demo paper **“Predictive Maintenance without Maintenance”** has been accepted at **RTCSA 2026** [@kindt2026predictive]. It is joint work by Philipp H. Kindt, Sebastiano Gaiardelli, Marco Caccamo, Thomas Wild, Andreas Herkersdorf, and Samarjit Chakraborty.
+Our demo paper **“Predictive Maintenance without Maintenance”** has been accepted at **RTCSA 2026** [@kindt2026predictive]. The authors are Philipp H. Kindt, Sebastiano Gaiardelli, Marco Caccamo, Thomas Wild, Andreas Herkersdorf, and Samarjit Chakraborty.
 
-## The problem with the premise
+## Monitoring without battery replacements
 
-Predictive maintenance is supposed to remove maintenance tasks. On an AI-supported factory floor it is really a *data-availability* problem: an agent asked to raise throughput, cut energy use, or schedule service before a failure needs fine-grained observations from many machines at once. Machine-internal sensors are usually built for control loops or safety interlocks, so their data is coarse, proprietary, or simply not exposed. Retrofitted wireless sensors listening to vibration, sound, and temperature can close that gap and make every motor, pump, and gear observable.
+Predictive maintenance depends on observations of how machines behave over time. Existing machine sensors are often designed for control or safety, and their measurements may be difficult to access or unsuitable for condition monitoring. Additional wireless sensors can provide vibration, sound, and temperature measurements without changes to the machine’s internal systems.
 
-Except that a battery-powered sensor is itself a maintenance task. Batteries cap lifetime, complicate dense deployments, and are hopeless for sealed infrastructure — you cannot mould a coin cell into a bridge. Wiring has the opposite problem: cost, planning, and fixed infrastructure. The sensing layer ends up limiting the very thing it was installed to extend.
+Those sensors also need power. Batteries require replacement, which becomes costly across a large installation and can be impractical in sealed or inaccessible locations. Wiring introduces installation costs and limits where sensors can be placed.
 
-So we target the other design point: a node you glue to a machine, that harvests ambient energy, learns a local model of normal behavior, and speaks up only when the thing it is watching starts to deviate.
+We investigate an alternative: sensors that harvest ambient energy, analyse measurements locally, and report signs of a developing fault. The paper presents a small vibration-classification case study and discusses the work needed to turn this approach into a batteryless system.
 
 <figure>
   <img src="/assets/img/blog/predictive-maintenance/architecture.png" alt="Left, an industrial production line with several battery-free sensor nodes in active, charging and no-power states. Right, the fan case study pipeline from vibration signal to real-time fault classification." loading="lazy" />
   <figcaption>Batteryless nodes on a production line are intermittently available (left). The case study grounds the idea on a single retrofitted vibration sensor (right).</figcaption>
 </figure>
 
-## Why this is a systems problem, not a sensing problem
+## Communication and computation with intermittent power
 
-Once the node is batteryless, sensing, computation, and communication stop being separable.
+A batteryless node may have to wait until it has stored enough energy before sensing or transmitting. When it wakes, its receiver may be asleep. Sensing, computation, and communication therefore need to be planned together.
 
-**Communication.** A node wakes only after it has accumulated enough energy, and the receiver may well be asleep at that moment. Holding a synchronized connection open just to report that nothing happened is exactly the wrong use of a harvested joule. We argue for event-triggered communication: transmit compact anomaly evidence when the vibration signature drifts, or when a diagnostic query asks for it. Neighbor-discovery-style schedules are a principled fit — short packets and sparse listening windows, synthesized to trade latency against energy without keeping clocks permanently in sync.
+For communication, we propose sending compact reports when measurements suggest an anomaly or when a diagnostic query requests information. Neighbour-discovery schedules, which combine short beacons with brief listening windows, offer a way for nodes to find each other without maintaining a continuously synchronised connection.
 
-There is an open theoretical problem underneath. Deterministic neighbor-discovery theory can guarantee a beacon/reception-window coincidence within the minimum possible worst-case time, but only for a *fixed* energy budget and a rigid schedule. A harvesting node has neither: its budget changes at runtime with the light or the vibration it is scavenging. A protocol family that keeps the deterministic guarantees while letting each node vary its own budget is, we think, a key enabler.
+Adapting these schedules to harvested energy remains an open problem. Existing deterministic discovery guarantees assume a fixed energy budget and schedule. A harvesting node’s available energy changes with its surroundings. We need protocols that can adjust to those changes while retaining useful bounds on discovery time.
 
-**Computation.** Streaming raw data anywhere is usually the wrong default. The node should spend its energy on a cheap local detector first, and escalate to a more accurate model, a compact feature vector, or a consensus with its neighbors only when the cheap detector is suspicious. That turns the sensing/networking boundary into a *semantic* interface: packets carry condensed information value, not samples.
+For computation, a simple local detector could screen routine observations. A possible anomaly could trigger a more accurate model, an exchange of features with neighbouring nodes, or a report to a remote system. This would let the node reserve more expensive processing and communication for observations that need further analysis.
 
-## The case study
+## A vibration-classification case study
 
-To check that the sensing end of this is not the hard part, we taped a small accelerometer node to an ordinary pedestal fan and clipped a paperclip to one blade to mimic an imbalance.
+We attached a small accelerometer node to a pedestal fan and clipped a paperclip to one blade to introduce an imbalance. This provided a simple setup for examining how much data and computation were needed to distinguish operating conditions.
 
 <figure>
   <img src="/assets/img/blog/predictive-maintenance/experiment.png" alt="Photographs of an accelerometer taped to a pedestal fan, with the protective cover closed and open and a paperclip clipped to one blade, plus the colored output of the real-time classifier." loading="lazy" />
   <figcaption>(a) The sensor, taped on. (b, c) Cover open and closed, with a paperclip creating an imbalance. (d) Output of the real-time classifier.</figcaption>
 </figure>
 
-Acceleration was sampled at only about 25 Hz. We recorded roughly 1600 windows of 200 samples and trained a deliberately small classifier — an MLP with a single hidden layer of five nodes — on the FFT coefficients of one-dimensional acceleration. On about 1000 further windows held out for verification, covering the fan standing still (166), rotating with the cover closed (239), cover open (177), cover open with paperclip (168), and cover closed with paperclip (220), **every window was classified correctly.** A real-time version tracked state changes such as opening the cover correctly in the steady state.
+We sampled acceleration at about 25 Hz and recorded roughly 1600 windows of 200 samples. Using FFT coefficients from one-dimensional acceleration, we trained a multilayer perceptron with a single hidden layer of five nodes.
 
-## Making it small enough to run on harvested energy
+We evaluated it on a separate set of approximately 1000 windows: 166 with the fan stopped, 239 with it rotating and the cover closed, 177 with the cover open, 168 with the cover open and the paperclip attached, and 220 with the cover closed and the paperclip attached. **All of these evaluation windows were classified correctly.** A real-time version also identified the steady states following changes such as opening the cover.
 
-Classifying correctly is not the interesting result; classifying correctly *cheaply* is. We down-sampled to 10 Hz and retrained on 16-sample windows:
+## Reducing the computation
+
+To explore smaller models, we downsampled the signal to 10 Hz and retrained using windows of 16 samples.
 
 | Model | Parameters | MACs | Accuracy |
 | --- | ---: | ---: | ---: |
 | Decision tree | 8 | 0 | 91.8% |
 | DS-CNN | 131 | 488 | 99.3% |
 
-That gap is the whole argument for energy-adaptive inference. An 8-node decision tree costs essentially nothing and can run continuously to flag candidates; the depthwise-separable CNN, at 488 multiply-accumulates, is invoked only when the tree is suspicious or the energy buffer allows. Once that two-stage chain fires, the node can raise its sampling rate and analyze longer windows.
+The decision tree uses fewer resources, while the depthwise-separable convolutional neural network (DS-CNN) achieves higher accuracy with 488 multiply-accumulate operations (MACs). This suggests a possible two-stage design: use the tree for initial screening and invoke the CNN when more information is needed and enough energy is available. Further analysis could then use a higher sampling rate or a longer observation window.
 
-## What we have not done yet
+This sequence is a proposed design, rather than a complete system demonstrated in the experiments.
 
-The demo is honest about its scope: **the sensor was battery-powered and the inference ran on a laptop.** What the case study establishes is a feasibility argument — a low sampling rate and a model in the hundreds-of-parameters range are sufficient for the task, which is the regime a harvesting-powered node could plausibly sustain. Actually closing the loop means running the model on the node, under intermittent power, with the asynchronous communication described above. That is the research agenda, and the paper is a statement of it rather than a finished system.
+## What the demonstration establishes
+
+The experiments show that small models and low sampling rates can distinguish the tested fan conditions. **The sensor was battery-powered, and inference ran on a laptop.** We have not yet demonstrated the full sensing and inference pipeline on a node powered by harvested energy.
+
+The next step is to run these models on the device, account for power interruptions, and integrate communication between intermittently available nodes. The case study helps establish the computational requirements for that work; broader evaluation is needed before drawing conclusions about industrial fault detection.
 
 ---
 

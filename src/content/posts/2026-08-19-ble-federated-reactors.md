@@ -1,70 +1,74 @@
 ---
-title: Giving federated reactors a low-power radio
+title: Low-power BLE communication for federated reactors
 date: 2026-08-19T10:00:00+02:00
-description: Why connection-oriented Bluetooth Low Energy is deterministic enough for Lingua Franca, and what it costs in power.
+description: Our new paper uses latency budgets to configure BLE links for Lingua Franca and reduce radio power.
 tags: [publications, ble, lingua-franca]
 hero: /assets/img/blog/ble-federated-reactors/overview.png
 heroAlt: Two federates linked by a Bluetooth Low Energy network channel
 bibliography: ble-federated-reactors.bib
 ---
 
-Our paper **“Budget-Conditioned BLE Communication for Federated Reactors”** has been accepted to *IEEE Embedded Systems Letters*, in the special issue for the Workshop on Time-Centric Reactive Software (TCRS) [@gaiardelli2026budget]. It is joint work by Sebastiano Gaiardelli, Philipp H. Kindt, and Samarjit Chakraborty.
+Our paper **“Budget-Conditioned BLE Communication for Federated Reactors”** has been accepted for publication in *IEEE Embedded Systems Letters*, in the special issue for the Workshop on Time-Centric Reactive Software (TCRS) [@gaiardelli2026budget]. The authors are Sebastiano Gaiardelli, Philipp H. Kindt, and Samarjit Chakraborty.
 
-## The gap
+## Communication deadlines in Lingua Franca
 
-[Lingua Franca](https://www.lf-lang.org/) is a coordination language for deterministic concurrent software. Programs are built from *reactors*, triggered by logical, time-stamped events in a fixed, statically determined order, so a program's output depends on its inputs and not on runtime scheduling. *Federated* reactors extend that guarantee across networked nodes.
+[Lingua Franca](https://www.lf-lang.org/) is a coordination language for deterministic concurrent software. Its programs consist of *reactors* that respond to events with logical timestamps. Their execution follows a statically determined order, so outputs do not depend on how the runtime happens to schedule concurrent work. Federated programs distribute these reactors across networked devices.
 
-The guarantee has a price: every link between nodes must be given a latency budget, its **`maxwait`**, declared at design time. `maxwait` has to cover the worst-case network latency, the time to assemble and disassemble packets, and the error introduced by clock offset and jitter at both ends.
+To coordinate those devices, each link needs a latency budget, declared through the **`maxwait`** parameter. This budget must account for network delay, packet handling, and clock offset and jitter at both ends.
 
-That is easy to state for a wire and awkward for a radio. Wireless links are usually assumed to have no useful bound at all, so no sensible `maxwait` can be written down — and Reactor-UC, the Lingua Franca runtime for microcontroller-class devices, consequently shipped without any low-power wireless transport. Mobile IoT nodes, wearables, and small sensors were simply hard to federate.
+Providing a useful latency estimate is difficult for a wireless link because packets can be lost or delayed by interference. Our work addresses this problem for Reactor-UC, the Lingua Franca runtime for microcontrollers, by adding a Bluetooth Low Energy transport.
 
 <figure>
   <img src="/assets/img/blog/ble-federated-reactors/overview.png" alt="Two federates linked by a BLE NetworkChannel, and the timing of that channel." loading="lazy" />
   <figcaption>Two federates linked by a BLE NetworkChannel (top) and the channel's timing (bottom). The maxwait parameter configures the radio.</figcaption>
 </figure>
 
-## The observation
+## Using BLE’s connection schedule
 
-Connection-oriented BLE is not a best-effort link. It is *itself* a time-triggered protocol: a connection has a configurable, periodic transmit schedule — the connection interval `CI` — and it retransmits lost packets on the next event. If you are willing to pay for a bounded number of retransmissions in your latency budget, its timing behavior in a controlled environment is “deterministic with some outliers,” which is exactly the contract every other Lingua Franca transport already offers.
+A connection-oriented BLE link communicates at periodic connection events. The time between events is its connection interval, `CI`. Lost packets can be retransmitted at subsequent events.
 
-So the question becomes quantitative rather than philosophical: how many retransmissions do you need, and what does the resulting `CI` cost you in power?
+This schedule lets us calculate a latency bound for a specified number of transmission attempts. It does not guarantee delivery under arbitrary interference: the reliability of the bound depends on the probability of exhausting those attempts. We therefore examine packet losses alongside the timing model.
 
-## How reliable is BLE, really?
+The design question is how long the connection interval can be while allowing enough attempts within the application’s `maxwait` budget. Longer intervals let the radio wake less often and can reduce its average power.
 
-Two measurements underpin the bound.
+## Packet losses and interference
 
-First, the physical layer. We placed two Nordic nRF54 radios about 1.5 m apart in a low-interference environment and sent 23-byte packets over BLE's 1 Mbit/s PHY on a single channel — no channel hopping, no retransmission. Across more than 10,000 packets, **not a single transmission error** was detected. Range-limit bit-error figures from the specification are not what a real deployment sees.
+We first measured physical-layer transmission errors using two Nordic nRF54 radios about 1.5 m apart in a low-interference environment. We sent more than 10,000 packets of 23 bytes over BLE’s 1 Mbit/s PHY on a single channel, without channel hopping or retransmission. We detected no transmission errors in this experiment. This result describes the tested conditions; it does not establish an error rate for other deployments.
 
-Second, interference between BLE piconets, which is the failure mode that actually matters when a Lingua Franca model contains several links. BLE shuffles connection events across channels, so we simulated the current hopping algorithm over 50 million connection events.
+We then simulated interference between BLE piconets over 50 million connection events using the channel-hopping algorithm. This captures a source of packet loss that matters when a federated program uses several wireless links.
 
 <figure>
   <img src="/assets/img/blog/ble-federated-reactors/channel-hopping.png" alt="Bar chart of re-collision probabilities for the BLE channel-hopping algorithm at 3, 9, 29, and 37 available channels." loading="lazy" />
   <figcaption>Probability that two piconets pick the same channel one to five times in a row, for different numbers of available channels.</figcaption>
 </figure>
 
-With only 3 usable channels, two piconets collide 33% of the time — but colliding five events in a row already drops to 0.4%. With the usual 37 channels, five consecutive collisions occurred with probability $2.4 \times 10^{-7}$. A retransmission budget larger than one buys a great deal.
+With 3 usable channels, the probability of two piconets choosing the same channel was about 33%. The probability of five consecutive collisions was about 0.4%. With 37 channels, the corresponding probability for five consecutive collisions was $2.4 \times 10^{-7}$. These results help quantify how additional transmission attempts affect reliability.
 
-## What it costs
+## Choosing the connection interval
 
-From there we derive a closed-form worst-case latency and invert it: given a `maxwait`, compute the **largest** admissible connection interval. Larger `CI` means the radio wakes less often, so this is the energy-optimal choice that still meets the deadline.
+We derive a closed-form latency bound and use it to find the largest connection interval that satisfies a given `maxwait` budget and retransmission allowance. Under the power model, this interval minimises radio power while meeting the specified timing constraints.
 
-For a representative condition-monitoring link — `maxwait` = 250 ms, 10 ms packet handling, 5 ms clock error, 2 ms stack overhead, no fragmentation, 3 retransmissions — the method selects **`CI* = 57.5 ms`**, whose worst-case delay of 247 ms fits the budget. The radio then draws about **0.44 mW instead of 3.3 mW**, which is what you would spend at the energy-naive minimum of `CI = 7.5 ms`. That is a **7.5× reduction** for the same deadline. The saving scales with slack: roughly 2.7× at a 100 ms `maxwait`, and around 30× at 1 s.
+For a representative condition-monitoring link, we use a 250 ms `maxwait` budget, 10 ms for packet handling, 5 ms of clock error, 2 ms of stack overhead, no fragmentation, and 3 retransmissions. The method selects **`CI* = 57.5 ms`**, with a calculated worst-case delay of 247 ms.
+
+The estimated radio power is **0.44 mW**, compared with **3.3 mW** at the minimum connection interval of 7.5 ms: a reduction of about **7.5×**. The model predicts reductions of roughly 2.7× for a 100 ms budget and 30× for a 1 s budget. These are model-based estimates, not hardware power measurements.
 
 <figure>
   <img src="/assets/img/blog/ble-federated-reactors/power.png" alt="Plot of maxwait and average power against connection interval, and the number of admissible transmission attempts." loading="lazy" />
   <figcaption>(a) maxwait and average power as a function of the connection interval. (b) The number of transmission attempts that still fit in a 250 ms budget.</figcaption>
 </figure>
 
-Panel (b) is the part we find most useful in practice. Pushing `CI` past `CI*` does not extend the deadline; it just spends the same budget in coarser units, so fewer attempts fit inside it. The attempt count is an integer, so it falls in steps — four, three, two, one — and the residual probability of a tardy message decays geometrically in that count. **Overshooting `CI*` degrades reliability abruptly rather than gradually.** Conversely, shortening `CI` buys nothing at all until you cross the next step.
+The number of attempts that fit within the budget changes in discrete steps. Increasing `CI` beyond `CI*` can remove an entire attempt, causing a sharp increase in the probability of a late message. Shortening the interval improves this aspect of reliability only when it leaves room for another attempt.
 
-## What this does not cover
+## Implementation and remaining work
 
-- The bound assumes the connection interval, peripheral latency, and fragmentation stay fixed for the life of the connection. Renegotiating them mid-flight invalidates it, which is why our transport fixes them when the connection opens.
-- It covers a **single link**. One central serving several peripherals turns `CI` selection into a scheduling problem, and that is future work.
-- The power figures are model-based, derived from Nordic's power profiler for an nRF52840. They await hardware validation.
-- “Controlled environment” is doing real work in the argument. Characterizing the per-attempt failure probability under uncontrolled interference is on our list.
+We implemented the transport as a BLE `NetworkChannel` for Reactor-UC using Zephyr. The current analysis has several limits:
 
-The implementation is a BLE `NetworkChannel` for Reactor-UC, built on Zephyr — as far as we know, the first low-power wireless transport for federated Lingua Franca.
+- The connection interval, peripheral latency, and fragmentation must remain fixed during the connection. The transport sets these parameters when the connection opens.
+- The analysis covers a single link. Selecting intervals for a central device serving several peripherals requires additional scheduling work.
+- The power estimates use Nordic’s power profiler for an nRF52840 and still need hardware validation.
+- The packet-loss measurements used a controlled environment. Further experiments are needed to characterise failures under uncontrolled interference.
+
+These limits define the next steps in evaluating the transport for practical deployments.
 
 ---
 

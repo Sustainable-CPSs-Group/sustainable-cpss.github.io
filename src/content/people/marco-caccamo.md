@@ -15,6 +15,8 @@ links:
     url: https://www.professoren.tum.de/en/caccamo-marco
 ---
 
-Marco Caccamo works on real-time and cyber-physical systems: predictable use of multicore processors in hard real-time systems, resource allocation for heterogeneous multicore platforms, the integration of artificial intelligence and reinforcement learning with embedded hardware, and safe deep reinforcement learning for autonomous systems. He graduated summa cum laude in Computer Engineering from the University of Pisa in 1997 and received his Ph.D. from Scuola Superiore Sant'Anna in 2002, then spent many years as a principal investigator at the University of Illinois at Urbana-Champaign. He received an NSF CAREER Award in 2003 and an Alexander von Humboldt Professorship in 2018, and is a Fellow of the IEEE and the AAIA.
+Marco Caccamo studies real-time and cyber-physical systems. His work covers predictable execution on multicore processors, resource allocation on heterogeneous platforms, and the integration of artificial intelligence with embedded hardware. He also works on safe deep reinforcement learning for autonomous systems.
 
-He is the second TUM host of this Focus Group, which is based at his chair, and a co-author on its work on maintenance-free predictive maintenance.
+He graduated summa cum laude in Computer Engineering from the University of Pisa in 1997 and received his Ph.D. from Scuola Superiore Sant’Anna in 2002. Before joining TUM, he spent many years as a principal investigator at the University of Illinois at Urbana-Champaign. He received an NSF CAREER Award in 2003 and an Alexander von Humboldt Professorship in 2018. He is a Fellow of the IEEE and the AAIA.
+
+Marco is one of the group’s two TUM hosts, and the group is based at his chair. He is a co-author of *Predictive Maintenance without Maintenance*.

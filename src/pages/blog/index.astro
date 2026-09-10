@@ -5,7 +5,7 @@ import PageIntro from "../../components/PageIntro.astro";
 const posts = (await getCollection("posts")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 <BaseLayout title="Updates" description="Notes on publications, prototypes, and methods from the Sustainable CPS Focus Group." active="updates">
-  <PageIntro title="Research updates" description="Notes on recent papers, experimental results, and ongoing work." />
+  <PageIntro title="Research updates" description="We share new papers, describe our experiments, and discuss the questions we are working on." />
   <section class="section shell post-grid" style="padding-top:0">
     {posts.map((post) => <a class="post-card" href={`/blog/${post.data.date.getUTCFullYear()}/${post.id.replace(/^\d{4}-\d{2}-\d{2}-/, "")}/`}>{post.data.hero && <img src={post.data.hero} alt={post.data.heroAlt || ""} loading="lazy" />}<div class="post-body"><time datetime={post.data.date.toISOString()}>{post.data.date.toLocaleDateString("en", { dateStyle: "medium" })}</time><h2>{post.data.title}</h2><p>{post.data.description}</p><span class="read">Read update →</span></div></a>)}
   </section>

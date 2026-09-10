@@ -19,6 +19,10 @@ links:
     url: https://github.com/sbgaia
 ---
 
-Sebastiano Gaiardelli develops methodologies for the optimization, reconfiguration, and verification of Cyber-Physical Production Systems. He received his Ph.D. in Computer Science from the University of Verona in 2025 with a dissertation on the verification and optimization of flexible manufacturing systems, following an M.Sc. in Computer Science and Engineering with a focus on embedded systems. He co-founded FACTORYAL S.r.l., a factory automation software spin-off of the University of Verona, where he is scientific advisor.
+Sebastiano Gaiardelli develops methods for optimising, reconfiguring, and verifying cyber-physical production systems.
 
-In the Focus Group he works on deterministic coordination for distributed embedded systems. He is the lead author of [*Budget-Conditioned BLE Communication for Federated Reactors*](/blog/2026/ble-federated-reactors/), which gives Lingua Franca federations a low-power wireless transport. His position is funded by the TUM Institute for Advanced Study.
+He received his Ph.D. in Computer Science from the University of Verona in 2025. His dissertation examined the verification and optimisation of flexible manufacturing systems. He previously completed an M.Sc. in Computer Science and Engineering with a focus on embedded systems. He co-founded FACTORYAL S.r.l., a factory automation software spin-off of the University of Verona, where he serves as scientific advisor.
+
+Within the group, Sebastiano works on deterministic coordination in distributed embedded systems. He is the lead author of [*Budget-Conditioned BLE Communication for Federated Reactors*](/blog/2026/ble-federated-reactors/), which introduces a low-power wireless transport for Lingua Franca federations.
+
+His position is funded by the TUM Institute for Advanced Study.

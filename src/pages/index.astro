@@ -12,10 +12,10 @@ const posts = (await getCollection("posts")).sort((a, b) => b.data.date.valueOf(
 const news = (await getCollection("news")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
 const selectedPublications = parseBibtex(publicationsRaw).filter((entry) => entry.fields.selected === "true");
 const directions = [
-  ["Energy-efficient and batteryless operation", "Scheduling, control, and communication under intermittent harvested power."],
-  ["Safe autonomy with lightweight machine learning", "Architectures combining resource-constrained learning with verifiable safety guarantees."],
-  ["Edge computing", "Local processing and communication for resource-constrained cyber-physical systems."],
-  ["Self-adaptation and early failure warning", "Detection of degradation and system reconfiguration for reliable long-term operation."],
+  ["Energy-efficient and batteryless operation", "We study how devices can sense, compute, and communicate when harvested energy is only intermittently available."],
+  ["Safe autonomy with lightweight machine learning", "We investigate how small learning models can be used in autonomous systems with verifiable safety guarantees."],
+  ["Edge computing", "We examine which tasks can run on the device and when remote computation is worth the energy and delay."],
+  ["Self-adaptation and early failure warning", "We develop ways to detect changes in system behaviour and adapt operation before a fault causes downtime."],
 ];
 ---
 <BaseLayout>

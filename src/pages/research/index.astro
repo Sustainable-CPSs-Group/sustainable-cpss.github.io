@@ -11,7 +11,7 @@ const { Content, headings } = await render(page);
   <section class="section shell content-grid" style="padding-top:0">
     <article class="prose"><Content /></article>
     <aside class="research-nav" aria-label="On this page">
-      <p class="eyebrow">Directions</p>
+      <p class="eyebrow">On this page</p>
       {headings.filter((heading) => heading.depth === 2).map((heading) => <a href={`#${heading.slug}`}>{heading.text}</a>)}
     </aside>
   </section>

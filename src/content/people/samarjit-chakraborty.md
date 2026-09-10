@@ -15,6 +15,8 @@ links:
     url: https://www.professoren.tum.de/en/chakraborty-samarjit
 ---
 
-Samarjit Chakraborty works on distributed embedded systems, hardware/software co-design, embedded control systems, low-power and energy storage systems, electromobility, and sensor network-based information processing. He received his Ph.D. from ETH Zurich and was an Assistant Professor at the National University of Singapore before joining TUM in 2008, where he held the Chair of Real-Time Computer Systems until 2019. From 2011 to 2016 he led embedded systems research for electric vehicles at TUM CREATE in Singapore. He is an IEEE Fellow and received the Humboldt Professorship Award in 2023.
+Samarjit Chakraborty studies distributed embedded systems, hardware/software co-design, and embedded control. His research also covers low-power systems, energy storage, electromobility, and information processing in sensor networks.
 
-He holds the Dieter Schwarz Courageous Research Grant that funds this Focus Group and is a co-author on both of its current papers.
+He received his Ph.D. from ETH Zurich and was an Assistant Professor at the National University of Singapore before joining TUM in 2008. He held TUM’s Chair of Real-Time Computer Systems until 2019. From 2011 to 2016, he also led embedded systems research for electric vehicles at TUM CREATE in Singapore. He is an IEEE Fellow and received the Humboldt Professorship Award in 2023.
+
+Samarjit holds the Dieter Schwarz Courageous Research Grant that funds the group. He is a co-author of its papers on BLE communication for federated reactors and predictive maintenance.

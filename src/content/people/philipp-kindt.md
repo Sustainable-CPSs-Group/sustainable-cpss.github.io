@@ -17,6 +17,8 @@ links:
     url: https://www.linkedin.com/in/philipp-kindt-474b0b180/
 ---
 
-Philipp Kindt works on low-power wireless connectivity for cyber-physical systems and the Internet of Things — neighbor discovery, connection scheduling, and the energy behavior of wireless protocols in resource-constrained devices.
+Philipp Kindt studies wireless communication for devices with limited energy. His work covers neighbour discovery, connection scheduling, and the energy consumption of wireless protocols for cyber-physical systems and the Internet of Things.
 
-In the Focus Group he works on what it takes for a sensing node to run without a battery at all. He is the lead author of [*Predictive Maintenance without Maintenance*](/blog/2026/predictive-maintenance-without-maintenance/) and a co-author on the work on deterministic BLE transports. His position is funded by the TUM Institute for Advanced Study.
+Within the group, he investigates how sensing nodes can operate without batteries. He is the lead author of [*Predictive Maintenance without Maintenance*](/blog/2026/predictive-maintenance-without-maintenance/) and a co-author of the work on BLE communication for federated reactors.
+
+His position is funded by the TUM Institute for Advanced Study.
