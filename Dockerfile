@@ -1,7 +1,7 @@
 FROM node:24-alpine AS dependencies
 WORKDIR /site
 COPY package*.json ./
-RUN npm ci
+RUN npm install --no-audit --no-fund
 
 FROM dependencies AS development
 COPY . .
