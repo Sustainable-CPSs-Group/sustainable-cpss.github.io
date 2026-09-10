@@ -7,8 +7,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "check": "astro check",
-    "ci": "npm run check && npm run build",
-    "preview": "astro preview"
+    "ci": "npm run test && npm run check && npm run build && npm run check:site",
+    "preview": "astro preview",
+    "test": "node --test scripts/*.test.mjs",
+    "check:site": "node scripts/check-site.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
@@ -20,5 +22,8 @@
     "remark-math": "^6.0.0",
     "typescript": "^5.9.3",
     "unist-util-visit": "^5.1.0"
+  },
+  "devDependencies": {
+    "parse5": "7.3.0"
   }
 }

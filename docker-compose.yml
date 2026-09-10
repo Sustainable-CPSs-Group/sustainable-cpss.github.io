@@ -6,10 +6,10 @@ services:
     ports:
       - "4321:4321"
     volumes:
-      - .:/site
-      - node_modules:/site/node_modules
+      - ./src:/site/src
+      - ./public:/site/public
+      - ./astro.config.mjs:/site/astro.config.mjs:ro
+      - ./tsconfig.json:/site/tsconfig.json:ro
     environment:
-      - CHOKIDAR_USEPOLLING=true
-
-volumes:
-  node_modules:
+      CHOKIDAR_USEPOLLING: "true"
+      ASTRO_TELEMETRY_DISABLED: "1"

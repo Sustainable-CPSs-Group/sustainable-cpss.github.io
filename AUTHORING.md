@@ -1,49 +1,54 @@
-# Content authoring
+# Editing content
 
-Most website changes require editing only Markdown, BibTeX, or images. Run `docker compose up --build` and preview changes at <http://localhost:4321>.
+Run `docker compose up --build` and open [localhost:4321](http://localhost:4321). Edit the source files with any text editor and save to see your changes.
 
-## Add an update
+## Write a post
 
-Create `src/content/posts/YYYY-MM-DD-short-title.md`:
+Create a Markdown file directly in `src/content/posts/`. Use a filename such as `2026-10-01-new-paper.md`:
 
 ```markdown
 ---
-title: A concise title
-date: 2026-09-10
-description: One sentence used on listing pages and in search previews.
-tags: [energy-harvesting, real-time]
-hero: /assets/img/blog/short-title/overview.png
-heroAlt: A meaningful description of the image
-bibliography: short-title.bib
+title: A new paper on energy-efficient sensing
+date: 2026-10-01
+description: What we studied and what we found, in one sentence.
+tags: [publications, energy-harvesting]
+hero: ../../assets/img/blog/new-paper/overview.png
+heroAlt: A diagram showing the sensor and its wireless connection
+bibliography: new-paper.bib
 ---
 
-Write the update in Markdown.
+Introduce the paper and explain the question it addresses.
+
+## Results
+
+Describe the result and the conditions under which it was obtained.
 ```
 
-The `hero`, `heroAlt`, and `bibliography` fields are optional. Put post images in `public/assets/img/blog/<short-title>/`.
+The `hero` image and `bibliography` fields are optional. Remove them if you do not need them. If you keep `hero`, provide a useful `heroAlt` description. Tags can also be omitted.
 
-## Images
+The filename determines the URL. This example appears at `/blog/2026/new-paper/`. Keep post Markdown files directly in the posts folder; use folders under `src/assets/img/blog/` for their images.
 
-Use ordinary Markdown:
+## Add images and captions
+
+Store post images in `src/assets/img/blog/<post-name>/`. From a post file, write:
 
 ```markdown
-![Description of the experiment](/assets/img/blog/short-title/experiment.png)
+![An accelerometer attached to the fan](../../assets/img/blog/new-paper/experiment.png)
+
+*The accelerometer measures vibration while the fan is running.*
 ```
 
-For a caption, use a small HTML figure inside the Markdown file:
+The image description is read by screen readers and appears if the image cannot load. The italic paragraph below the image is its visible caption.
 
-```html
-<figure>
-  <img src="/assets/img/blog/short-title/experiment.png" alt="Description of the experiment" loading="lazy" />
-  <figcaption>What the reader should notice.</figcaption>
-</figure>
-```
+Astro reads the original image, records its dimensions, and generates optimised versions for different screen sizes. Use Markdown image syntax for images inside posts. In Astro templates, use `Image` from `astro:assets`.
 
-## Mathematics
+Keep downloadable files that should be copied unchanged, such as PDFs, in `public/`. Portraits and figures used on pages belong in `src/assets/img/`, not `public/`.
 
-Inline mathematics uses single dollar signs: `$E = P \cdot t$`.
+## Write equations
 
-Display mathematics uses a pair of dollar signs:
+Use single dollar signs for inline mathematics: `$E = P \cdot t$`.
+
+For a displayed equation, put two dollar signs on their own lines:
 
 ```text
 $$
@@ -51,22 +56,88 @@ E_{total} = \sum_{i=1}^{n} P_i t_i
 $$
 ```
 
-KaTeX renders both forms during the static build.
+The site renders equations with KaTeX.
 
-## Post references
+## Cite references in a post
 
-Create `src/content/references/short-title.bib` and set `bibliography: short-title.bib` in the post front matter. Cite a key with `[@paperKey]`:
+Create `src/content/references/new-paper.bib`:
 
-```markdown
-The configuration follows the latency-budget method [@paperKey].
+```bibtex
+@article{example2026,
+  title = {An example paper},
+  author = {Doe, Jane and Smith, Alex},
+  year = {2026},
+  journal = {Example Journal}
+}
 ```
 
-The citation links to the formatted reference list automatically appended to the post.
+Set `bibliography: new-paper.bib` in the post’s opening block. In the text, write:
+
+```markdown
+We follow the approach described in the paper [@example2026].
+```
+
+The citation links to the reference list at the end of the post. Each citation key must exist in that post’s bibliography. The checks report missing bibliography files and broken citation links.
 
 ## Add a publication
 
-Add a standard BibTeX entry to `src/data/publications.bib`. The publications page and selected work on the homepage are generated from this file. Set `selected = {true}` to feature an entry on the homepage. Optional fields include `doi`, `url`, `pdf`, `abbr`, `note`, and `abstract`.
+Add an entry to `src/data/publications.bib`:
+
+```bibtex
+@article{example2026,
+  title = {An example paper},
+  author = {Doe, Jane and Smith, Alex},
+  year = {2026},
+  journal = {Example Journal},
+  abbr = {EJ},
+  selected = {true}
+}
+```
+
+Use a unique key for each paper. Add `doi`, `url`, or `pdf` when available. Add `note` for information such as acceptance status. Set `selected = {true}` to include the paper on the homepage.
+
+The group publication list and post bibliographies are separate. To cite a group paper in a post, include its entry in the post’s bibliography too.
 
 ## Add or update a person
 
-People are individual Markdown files in `src/content/people/`. Copy an existing profile and edit its front matter and body. The `order` number controls its position on the people page.
+Copy a Markdown file in `src/content/people/`. Update the name, role, institution, group role, summary, links, and biography. Put the portrait in `src/assets/img/people/` and use:
+
+```yaml
+image: ../../assets/img/people/new-person.jpg
+imageAlt: Portrait of the person's name
+order: 7
+```
+
+Use the `order` field to choose the position on the people page. Keep names and email addresses in the same format as the existing profiles.
+
+## Post a short news item
+
+Create `src/content/news/2026-10-01-paper-accepted.md`:
+
+```markdown
+---
+date: 2026-10-01
+title: Our paper has been accepted for publication.
+link: /blog/2026/new-paper/
+---
+```
+
+The homepage shows the three most recent items. The `title` is the text shown there; text below the opening block is not displayed in the news list. The link is optional.
+
+## Link to another page
+
+Use Markdown links with paths starting at the site root:
+
+```markdown
+See our [research](/research/) and [publications](/publications/).
+```
+
+The build adds the GitHub Pages repository path when needed. Leave external links as full URLs, such as `https://example.org/paper`. For local images, use the relative file paths described above.
+
+## Check before submitting
+
+```bash
+docker compose run --build --rm site npm run ci
+```
+
+This runs entirely inside Docker. Commit your Markdown, BibTeX, and original image files; do not commit generated files from `dist/`.

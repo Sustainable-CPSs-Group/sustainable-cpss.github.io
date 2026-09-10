@@ -4,7 +4,7 @@ role: Professor, Chair of Integrated Systems
 institution: TUM School of Computation, Information and Technology
 groupRole: TUM host
 summary: Works on multicore architectures, FPGA prototyping, self-organizing systems, error tolerance, and energy efficiency.
-image: /assets/img/people/herkersdorf.jpg
+image: ../../assets/img/people/herkersdorf.jpg
 imageAlt: Portrait of Andreas Herkersdorf
 order: 2
 links:

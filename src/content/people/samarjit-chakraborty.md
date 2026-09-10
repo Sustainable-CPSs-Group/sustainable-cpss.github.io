@@ -4,7 +4,7 @@ role: William R. Kenan, Jr. Distinguished Professor
 institution: University of North Carolina at Chapel Hill
 groupRole: Grant holder
 summary: Researches distributed embedded systems, hardware/software co-design, embedded control, and low-power systems.
-image: /assets/img/people/chakraborty.jpg
+image: ../../assets/img/people/chakraborty.jpg
 imageAlt: Portrait of Samarjit Chakraborty
 order: 1
 email: samarjit@cs.unc.edu

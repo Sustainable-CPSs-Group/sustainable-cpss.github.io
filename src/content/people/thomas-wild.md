@@ -4,7 +4,7 @@ role: Senior Researcher, Chair of Integrated Systems
 institution: TUM School of Computation, Information and Technology
 groupRole: Senior researcher
 summary: Works on hardware-assisted system optimization, power management, and traffic steering in edge networks.
-image: /assets/img/people/wild.jpg
+image: ../../assets/img/people/wild.jpg
 imageAlt: Portrait of Thomas Wild
 order: 4
 email: thomas.wild@tum.de

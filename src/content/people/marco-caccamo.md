@@ -4,7 +4,7 @@ role: Alexander von Humboldt Professor, Chair of CPS in Production Engineering
 institution: TUM School of Engineering and Design
 groupRole: TUM host
 summary: Researches real-time and cyber-physical systems, multicore platforms, and safe autonomous systems.
-image: /assets/img/people/caccamo.jpg
+image: ../../assets/img/people/caccamo.jpg
 imageAlt: Portrait of Marco Caccamo
 order: 3
 email: mcaccamo@tum.de

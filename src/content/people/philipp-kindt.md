@@ -4,7 +4,7 @@ role: Postdoctoral Researcher, Chair of CPS in Production Engineering
 institution: TUM School of Engineering and Design
 groupRole: TUM-IAS postdoctoral researcher
 summary: Works on low-power wireless connectivity, neighbor discovery, and energy-aware protocols for resource-constrained devices.
-image: /assets/img/people/kindt.jpg
+image: ../../assets/img/people/kindt.jpg
 imageAlt: Portrait of Philipp Kindt
 order: 5
 email: philipp.kindt@tum.de

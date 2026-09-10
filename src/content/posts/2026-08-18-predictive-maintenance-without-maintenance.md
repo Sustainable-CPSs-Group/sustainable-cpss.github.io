@@ -3,7 +3,7 @@ title: Predictive maintenance without maintenance
 date: 2026-08-18T10:00:00+02:00
 description: Our RTCSA demo studies small vibration classifiers as a step towards batteryless condition monitoring.
 tags: [publications, energy-harvesting, tinyml]
-hero: /assets/img/blog/predictive-maintenance/architecture.png
+hero: ../../assets/img/blog/predictive-maintenance/architecture.png
 heroAlt: Batteryless sensor architecture and fan case study pipeline
 bibliography: predictive-maintenance.bib
 ---
@@ -18,10 +18,9 @@ Those sensors also need power. Batteries require replacement, which becomes cost
 
 We investigate an alternative: sensors that harvest ambient energy, analyse measurements locally, and report signs of a developing fault. The paper presents a small vibration-classification case study and discusses the work needed to turn this approach into a batteryless system.
 
-<figure>
-  <img src="/assets/img/blog/predictive-maintenance/architecture.png" alt="Left, an industrial production line with several battery-free sensor nodes in active, charging and no-power states. Right, the fan case study pipeline from vibration signal to real-time fault classification." loading="lazy" />
-  <figcaption>Batteryless nodes on a production line are intermittently available (left). The case study grounds the idea on a single retrofitted vibration sensor (right).</figcaption>
-</figure>
+![Left, an industrial production line with several battery-free sensor nodes in active, charging and no-power states. Right, the fan case study pipeline from vibration signal to real-time fault classification.](../../assets/img/blog/predictive-maintenance/architecture.png)
+
+*Batteryless nodes on a production line are intermittently available (left). The case study grounds the idea on a single retrofitted vibration sensor (right).*
 
 ## Communication and computation with intermittent power
 
@@ -37,10 +36,9 @@ For computation, a simple local detector could screen routine observations. A po
 
 We attached a small accelerometer node to a pedestal fan and clipped a paperclip to one blade to introduce an imbalance. This provided a simple setup for examining how much data and computation were needed to distinguish operating conditions.
 
-<figure>
-  <img src="/assets/img/blog/predictive-maintenance/experiment.png" alt="Photographs of an accelerometer taped to a pedestal fan, with the protective cover closed and open and a paperclip clipped to one blade, plus the colored output of the real-time classifier." loading="lazy" />
-  <figcaption>(a) The sensor, taped on. (b, c) Cover open and closed, with a paperclip creating an imbalance. (d) Output of the real-time classifier.</figcaption>
-</figure>
+![Photographs of an accelerometer taped to a pedestal fan, with the protective cover closed and open and a paperclip clipped to one blade, plus the colored output of the real-time classifier.](../../assets/img/blog/predictive-maintenance/experiment.png)
+
+*(a) The sensor, taped on. (b, c) Cover open and closed, with a paperclip creating an imbalance. (d) Output of the real-time classifier.*
 
 We sampled acceleration at about 25 Hz and recorded roughly 1600 windows of 200 samples. Using FFT coefficients from one-dimensional acceleration, we trained a multilayer perceptron with a single hidden layer of five nodes.
 

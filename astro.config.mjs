@@ -4,15 +4,20 @@ import { unified } from "@astrojs/markdown-remark";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
 import remarkCitations from "./src/lib/remark-citations.mjs";
+import remarkLinks from "./src/lib/remark-links.mjs";
+
+const base = process.env.ASTRO_BASE || "/";
 
 export default defineConfig({
-  site: "https://sustainable-cpss-group.github.io",
+  site: process.env.ASTRO_SITE || "https://sustainable-cpss-group.github.io",
+  base,
+  image: { layout: "constrained", objectFit: "contain" },
   integrations: [sitemap()],
   output: "static",
   trailingSlash: "always",
   markdown: {
     processor: unified({
-      remarkPlugins: [remarkMath, remarkCitations],
+      remarkPlugins: [remarkMath, remarkCitations, [remarkLinks, { base }]],
       rehypePlugins: [rehypeKatex],
     }),
   },

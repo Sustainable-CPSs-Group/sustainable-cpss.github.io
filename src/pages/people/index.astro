@@ -1,4 +1,6 @@
 ---
+import { withBase } from "../../lib/paths";
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageIntro from "../../components/PageIntro.astro";
@@ -7,6 +9,6 @@ const people = (await getCollection("people")).sort((a, b) => a.data.order - b.d
 <BaseLayout title="People" description="The grant holder, TUM hosts, and researchers of the Sustainable CPS Focus Group." active="people">
   <PageIntro title="People" description="Our group brings together researchers at TUM and the University of North Carolina at Chapel Hill." />
   <section class="shell people-grid">
-    {people.map((person) => <article class="person-card"><img src={person.data.image} alt={person.data.imageAlt} loading="lazy" /><div class="body"><p class="role">{person.data.groupRole}</p><h2>{person.data.name}</h2><p class="institution">{person.data.role}<br />{person.data.institution}</p><p class="summary">{person.data.summary}</p><div class="link-list"><a href={`/people/${person.id}/`}>Profile</a>{person.data.email && <a href={`mailto:${person.data.email}`}>Email</a>}{person.data.links.slice(0, 2).map((link) => <a href={link.url}>{link.label} ↗</a>)}</div></div></article>)}
+    {people.map((person) => <article class="person-card"><Image src={person.data.image} alt={person.data.imageAlt} width={250} layout="constrained" loading="lazy" /><div class="body"><p class="role">{person.data.groupRole}</p><h2>{person.data.name}</h2><p class="institution">{person.data.role}<br />{person.data.institution}</p><p class="summary">{person.data.summary}</p><div class="link-list"><a href={withBase(`/people/${person.id}/`)}>Profile</a>{person.data.email && <a href={`mailto:${person.data.email}`}>Email</a>}{person.data.links.slice(0, 2).map((link) => <a href={link.url}>{link.label} ↗</a>)}</div></div></article>)}
   </section>
 </BaseLayout>

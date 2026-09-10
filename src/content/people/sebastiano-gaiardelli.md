@@ -4,7 +4,7 @@ role: Postdoctoral Researcher, Chair of CPS in Production Engineering
 institution: TUM School of Engineering and Design
 groupRole: TUM-IAS postdoctoral researcher
 summary: Develops methods for the optimization, reconfiguration, and verification of cyber-physical production systems.
-image: /assets/img/people/gaiardelli.jpg
+image: ../../assets/img/people/gaiardelli.jpg
 imageAlt: Portrait of Sebastiano Gaiardelli
 order: 6
 email: sebastiano.gaiardelli@tum.de

@@ -3,13 +3,13 @@ import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
 const posts = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/posts" }),
-  schema: z.object({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/posts" }),
+  schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string(),
     date: z.coerce.date(),
     tags: z.array(z.string()).default([]),
-    hero: z.string().optional(),
+    hero: image().optional(),
     heroAlt: z.string().optional(),
     bibliography: z.string().optional(),
   }),
@@ -17,13 +17,13 @@ const posts = defineCollection({
 
 const people = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/people" }),
-  schema: z.object({
+  schema: ({ image }) => z.object({
     name: z.string(),
     role: z.string(),
     institution: z.string(),
     groupRole: z.string(),
     summary: z.string(),
-    image: z.string(),
+    image: image(),
     imageAlt: z.string(),
     order: z.number(),
     email: z.email().optional(),

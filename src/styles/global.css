@@ -8,7 +8,6 @@
   --line: #dce3df;
   --soft: #f4f6f4;
   --radius: .2rem;
-  --shadow: none;
   --shell: min(1100px, calc(100% - 3rem));
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
@@ -21,7 +20,10 @@
 body { margin: 0; min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; line-height: 1.7; }
 body > main { flex: 1 0 auto; min-width: 0; }
 .site-header, .site-footer { flex-shrink: 0; }
-img { display: block; max-width: 100%; }
+img { display: block; max-width: 100%; height: auto; }
+.prose p:has(> img) { margin: 2rem 0 .7rem; }
+.prose p:has(> img) + p:has(> em:only-child) { color: var(--muted); font-size: .85rem; }
+.post-hero[data-astro-image] { width: var(--shell); }
 a { color: var(--green); text-underline-offset: .2em; }
 a:hover { text-decoration: underline; }
 :focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
@@ -70,7 +72,7 @@ nav a[aria-current="page"] { color: var(--green); text-decoration: underline; te
 
 .people-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; padding-bottom: 3rem; }
 .person-card { display: grid; grid-template-columns: 125px minmax(0, 1fr); gap: 1.25rem; align-items: start; padding: 1.25rem 0; border-top: 1px solid var(--line); }
-.person-card img { width: 125px; aspect-ratio: 4 / 5; object-fit: cover; }
+.person-card img { width: 125px; height: auto; aspect-ratio: 4 / 5; object-fit: cover; --fit: cover; }
 .person-card .role { color: var(--muted); font-size: .78rem; margin: 0; }
 .person-card h2 { margin: .4rem 0; font-size: 1.2rem; }
 .person-card .institution { color: var(--muted); font-size: .84rem; }
@@ -96,7 +98,7 @@ nav a[aria-current="page"] { color: var(--green); text-decoration: underline; te
 .post-card { min-width: 0; display: flex; flex-direction: column; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
 .post-card:hover { text-decoration: none; }
 .post-card:hover h2, .post-card:hover .read { text-decoration: underline; text-underline-offset: .2em; }
-.post-card img { width: 100%; aspect-ratio: 5 / 2; object-fit: cover; }
+.post-card img { width: 100%; height: auto; aspect-ratio: 5 / 2; object-fit: contain; --fit: contain; }
 .post-body { display: flex; flex: 1; flex-direction: column; padding: 1rem 0; }
 .post-card time { color: var(--muted); font-size: .8rem; }
 .post-card h2 { margin: .5rem 0; font-size: 1.15rem; }
