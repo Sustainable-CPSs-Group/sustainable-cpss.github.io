@@ -11,8 +11,8 @@ const publications = parseBibtex(publicationsRaw);
   <section class="section shell" style="padding-top:0">
     <label for="publication-filter" class="eyebrow">Filter publications</label>
     <input class="filter" id="publication-filter" type="search" placeholder="Search by title, author, or year…" />
-    <PublicationList entries={publications} />
-    <p id="publication-empty" hidden>No papers match your search. Try another title, author, or year.</p>
+    <PublicationList entries={publications} groupByYear />
+    <p id="publication-empty" role="status" hidden>No papers match your search. Try another title, author, or year.</p>
   </section>
   <script>
     const input = document.querySelector<HTMLInputElement>("#publication-filter");
@@ -25,6 +25,9 @@ const publications = parseBibtex(publicationsRaw);
         const matches = publication.dataset.publication?.includes(query) ?? false;
         publication.hidden = !matches;
         if (matches) visible++;
+      });
+      document.querySelectorAll<HTMLElement>("[data-publication-group]").forEach((group) => {
+        group.hidden = !group.querySelector("[data-publication]:not([hidden])");
       });
       if (empty) empty.hidden = visible !== 0;
     });

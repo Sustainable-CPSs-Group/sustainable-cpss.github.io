@@ -5,6 +5,7 @@ import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
 import remarkCitations from "./src/lib/remark-citations.mjs";
 import remarkLinks from "./src/lib/remark-links.mjs";
+import remarkFigures from "./src/lib/remark-figures.mjs";
 
 const base = process.env.ASTRO_BASE || "/";
 
@@ -17,7 +18,7 @@ export default defineConfig({
   trailingSlash: "always",
   markdown: {
     processor: unified({
-      remarkPlugins: [remarkMath, remarkCitations, [remarkLinks, { base }]],
+      remarkPlugins: [remarkMath, remarkCitations, [remarkLinks, { base }], remarkFigures],
       rehypePlugins: [rehypeKatex],
     }),
   },

@@ -38,7 +38,7 @@ Store post images in `src/assets/img/blog/<post-name>/`. From a post file, write
 *The accelerometer measures vibration while the fan is running.*
 ```
 
-The image description is read by screen readers and appears if the image cannot load. The italic paragraph below the image is its visible caption.
+The image description is read by screen readers and appears if the image cannot load. An italic paragraph immediately after an image becomes its visible caption. The site groups the image and caption in a figure with consistent spacing and styling.
 
 Astro reads the original image, records its dimensions, and generates optimised versions for different screen sizes. Use Markdown image syntax for images inside posts. In Astro templates, use `Image` from `astro:assets`.
 
