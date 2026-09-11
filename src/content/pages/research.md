@@ -4,15 +4,17 @@ description: Batteryless sensing, low-power wireless communication, and AI-assis
 areas:
   - title: Batteryless industrial sensing
     description: We study how harvested energy and lightweight local inference could support machine monitoring without routine battery replacement.
-  - title: Low-power wireless and BLE
-    description: Our BLE work connects application timing requirements with radio energy use. We also investigate communication when nodes wake independently and lose power.
+  - title: Harvesting-powered sensors
+    description: We study the design of connected sensors that are fully self-sustained by harvesting their energy from the surrounding.
+  - title: Low-power wireless communications
+    description: Our wireless protocols designs connect application timing requirements with radio energy use under the constraints of energy harvesting and busy channels.
   - title: Coordinated sensor networks
-    description: We aim to schedule transmissions across many sensors, accounting for available energy and giving urgent measurements timely access to the radio channel.
+    description: We aim to schedule transmissions across many harvesting-powered sensors, accounting for available energy and giving urgent measurements timely access to the radio channel.
   - title: AI-assisted diagnostics
-    description: We investigate how AI could combine sensor evidence with engineers’ questions and adapt sensing and communication within explicit operating rules.
+    description: We investigate how AI could provide sensor evidence and adapt sensing and communication within explicit operating rules.
 ---
 
-Monitoring a machine should not create another system that needs frequent maintenance. We investigate how externally attached sensors could help detect wear, diagnose faults, and support maintenance decisions while keeping their own energy use and servicing needs low.
+Monitoring a machine should not create another system that needs frequent maintenance itself. We therefore investigate how externally attached sensors could help detect wear, diagnose faults, and support maintenance decisions while keeping their own energy use and servicing needs low.
 
 Our current work on low-power communication and anomaly detection contributes to a longer-term goal: a dense network of batteryless sensors that can change what it measures and reports according to the task. Routine monitoring may need only occasional summaries; an unusual vibration or an engineer’s question may call for detailed readings from a few nearby sensors.
 
@@ -24,21 +26,17 @@ We study lightweight models that detect unusual behaviour close to the sensor. S
 
 Our [predictive-maintenance case study](/blog/2026/predictive-maintenance-without-maintenance/) examines vibration sensing and small learning models for this setting. Its experiments use a battery-powered sensor and run inference on a laptop; a complete batteryless monitoring system remains a research goal.
 
-## Bluetooth Low Energy and predictable communication
+## Wireless communications for energy harvesting-powered devices
+In most wireless networks, devices communicate using synchronized clocks. Therefore, they obey to a common sleep/wake schedule and can sleep when not communicating. 
+When devices are powered using harvesting systems, then devices operate intermittently and cannot afford maintaining a synchronized clock. Our research focuses on how the wireless communication is organized under these constraints, while at the same time minimizing the power consumption and collision probabilities. 
 
-Bluetooth Low Energy (BLE) is an explicit part of our communication research. We study how application timing requirements can guide radio configuration, so a device spends less energy communicating while delivering data within the time the application allows.
-
-Our [work on BLE communication for federated reactors](/blog/2026/ble-federated-reactors/) uses a link’s latency budget to select its connection interval. For a representative monitoring link, the power model predicts about 7.5× lower average power than using the minimum interval, while meeting the same latency budget under the model’s assumptions. This is a modelled power comparison, not a measured reduction for a complete sensor network.
-
-Intermittent power introduces a further question: when is maintaining or restoring a connection worthwhile, and when would connectionless reporting use less energy? The proposed networking work considers BLE alongside technologies such as Zigbee and LoRa. Their different transmission and listening costs matter when choosing schedules, acknowledgements, and relays.
-
-The proposed programme brings together three directions described below.
+Intermittent power introduces a further question: when is maintaining or restoring a synchronous connection worthwhile, and when would asynchronous communication use less energy?
 
 ## Connectionless reporting
 
 The first direction concerns sensors that initiate a report when they have useful data and enough energy. Without a persistent connection or synchronised clocks, the sender’s transmissions may miss the receiver’s listening windows. Repeated attempts cost energy, and nearby senders can collide.
 
-We plan to use **Coverage Maps** to reason about which relative timings between a sender and receiver allow a packet to arrive. The aim is to design transmission and listening schedules with predictable delivery times for a given energy budget, then extend them to changing energy availability and multiple senders. We will also examine when acknowledgements and information about recent channel use can avoid unnecessary transmissions.
+We rely on **Coverage Maps** to reason about which relative timings between a sender and receiver allow a packet to arrive. The aim is to design transmission and listening schedules with predictable delivery times for a given energy budget, then extend them to changing energy availability and multiple senders. We will also examine when acknowledgements and information about recent channel use can avoid unnecessary transmissions.
 
 ## Coordinated wake-up and channel access
 
@@ -54,13 +52,10 @@ The third direction investigates an AI agent that combines local anomaly reports
 
 We propose combining learned models with explicit, checkable rules. Before a plan is executed, symbolic checks would assess constraints such as minimum sensing coverage, resource limits, and when to escalate an uncertain diagnosis to a person. Evaluating these checks and their limits is part of the research.
 
-Human expertise is central to this approach. An operator could request measurements, confirm or correct an alert, and explain an observation through a mobile or augmented-reality interface. We plan to investigate how that feedback can improve both diagnosis and the network’s choice of what to measure next.
 
-## Evaluation and next steps
+## More on our results
 
-The proposed evaluation combines hardware measurements, controlled energy traces, and simulation. It includes wake-up receivers with sub-GHz data radios, comparisons with LoRa-class and IEEE 802.15.4-class systems, and BLE advertising as an intermittent communication baseline. Physical testbeds would establish realistic energy and interference behaviour; simulation would explore larger networks.
-
-We aim to measure energy per delivered report, delivery delay, reliability, and fairness between sensors, alongside diagnostic accuracy and time to diagnosis. The full adaptive network, its deployment at scale, and the release of associated tools and datasets are planned outcomes. Our [publications](/publications/) and [research updates](/blog/) describe the results available so far.
+ Our [publications](/publications/) and [research updates](/blog/) describe the results available so far.
 
 ---
 
