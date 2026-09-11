@@ -19,4 +19,4 @@ Marco Caccamo studies real-time and cyber-physical systems. His work covers pred
 
 He graduated summa cum laude in Computer Engineering from the University of Pisa in 1997 and received his Ph.D. from Scuola Superiore Sant’Anna in 2002. Before joining TUM, he spent many years as a principal investigator at the University of Illinois at Urbana-Champaign. He received an NSF CAREER Award in 2003 and an Alexander von Humboldt Professorship in 2018. He is a Fellow of the IEEE and the AAIA.
 
-Marco is one of the group’s two TUM hosts, and the group is based at his chair. He is a co-author of *Predictive Maintenance without Maintenance*.
+Marco Caccamo is one of the group’s two TUM hosts.
