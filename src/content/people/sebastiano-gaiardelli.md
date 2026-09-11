@@ -23,6 +23,4 @@ Sebastiano Gaiardelli develops methods for optimising, reconfiguring, and verify
 
 He received his Ph.D. in Computer Science from the University of Verona in 2025. His dissertation examined the verification and optimisation of flexible manufacturing systems. He previously completed an M.Sc. in Computer Science and Engineering with a focus on embedded systems. He co-founded FACTORYAL S.r.l., a factory automation software spin-off of the University of Verona, where he serves as scientific advisor.
 
-Within the group, Sebastiano works on deterministic coordination in distributed embedded systems. He is the lead author of [*Budget-Conditioned BLE Communication for Federated Reactors*](/blog/2026/ble-federated-reactors/), which introduces a low-power wireless transport for Lingua Franca federations.
-
-His position is funded by the TUM Institute for Advanced Study.
+Within the group, Sebastiano works on deterministic coordination in distributed embedded systems.
