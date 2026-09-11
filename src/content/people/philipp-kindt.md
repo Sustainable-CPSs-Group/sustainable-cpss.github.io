@@ -20,5 +20,3 @@ links:
 Philipp Kindt studies wireless communication for devices with limited energy. His work covers neighbour discovery, connection scheduling, and the energy consumption of wireless protocols for cyber-physical systems and the Internet of Things.
 
 Within the group, he investigates how sensing nodes can operate without batteries. He is the lead author of [*Predictive Maintenance without Maintenance*](/blog/2026/predictive-maintenance-without-maintenance/) and a co-author of the work on BLE communication for federated reactors.
-
-His position is funded by the TUM Institute for Advanced Study.
