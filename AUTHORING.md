@@ -4,7 +4,7 @@ Run `docker compose up --build` and open [localhost:4321](http://localhost:4321)
 
 ## Edit the research overview
 
-Edit `src/content/pages/research.md` to update the research page. Its `areas` list at the top also supplies the four research summaries on the homepage:
+Edit `src/content/pages/research.md` to update the research page. Its `areas` list at the top also supplies the research summaries on the homepage:
 
 ```yaml
 areas:
@@ -15,6 +15,14 @@ areas:
 Change each title and description as needed, keeping the indentation. The Markdown below the closing `---` supplies the full research page. When updating the text, distinguish published results, prototype experiments, and planned work.
 
 The homepage introduction and its search description are in `src/content/pages/about.md`.
+
+### Edit the overview figure
+
+The robot-workcell diagram near the top of the homepage is in `src/assets/img/project-overview/robot-workcell.svg`. Open it in an SVG vector editor to move the robot, boxes, arrows, and labels. The text remains editable. You can also edit the SVG in a text editor. Save changes to the same file and check the homepage for text overlaps.
+
+The caption and accessible description are in `src/content/pages/overview.md`: `title` is the visible caption, `description` is the image alternative text, and the Markdown below the closing `---` is the expandable case-study explanation. Update these when the picture changes. Editing the SVG does not automatically change the Markdown, or vice versa.
+
+The figure scales to the available width without cropping. Readers can open the full-size SVG or expand the text explanation, including on small screens. The surrounding layout is in `src/components/ProjectOverview.astro`, which uses Astro’s image component. No extra dependency is needed to build the figure.
 
 ## Write a post
 

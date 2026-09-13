@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import { getCollection, getEntry, render } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PublicationList from "../components/PublicationList.astro";
+import ProjectOverview from "../components/ProjectOverview.astro";
 import { parseBibtex } from "../lib/bibtex";
 import publicationsRaw from "../data/publications.bib?raw";
 
@@ -22,6 +23,8 @@ const directions = research.data.areas;
     <p class="eyebrow">TUM Institute for Advanced Study · Focus Group</p>
     <h1>{about.data.title}</h1>
   </header>
+
+  <ProjectOverview />
 
   <div class="shell overview-grid">
     <article class="prose" aria-label="About the group"><Content /></article>

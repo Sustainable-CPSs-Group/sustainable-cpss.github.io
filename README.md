@@ -30,6 +30,8 @@ Leave the terminal running while you edit. Saved changes to text, images, and st
 | What you want to change | File or folder |
 | --- | --- |
 | Homepage introduction | `src/content/pages/about.md` |
+| Robot-workcell figure (editable SVG) | `src/assets/img/project-overview/robot-workcell.svg` |
+| Figure caption, alternative text, and case study | `src/content/pages/overview.md` |
 | Research description and homepage research areas | `src/content/pages/research.md` |
 | People and biographies | `src/content/people/` |
 | Research posts | `src/content/posts/` |
@@ -102,6 +104,19 @@ Commit your edited content and image files on a branch, push it, and open a pull
 After a pull request is merged into `main`, **Deploy to GitHub Pages** checks and builds the site in Docker, then publishes it. Pull requests do not publish the live website.
 
 A repository administrator needs to select **Settings → Pages → Build and deployment → Source: GitHub Actions** once. The deployment workflow reads the configured Pages URL, including any repository path or custom domain. There is no need to hard-code that address in your Markdown links.
+
+### Go live for the first time
+
+1. Open the repository’s **Settings → Pages** and select **GitHub Actions** as the source. The workflow already exists, so you do not need to add a template.
+2. Wait for both **Quality** checks on the redesign pull request to pass, then merge `astro-redesign` into `main`.
+3. Open **Actions → Deploy to GitHub Pages** and wait for the build and deployment jobs to finish. If an environment approval is requested, a repository maintainer must approve it.
+4. Open **Settings → Pages → Visit site**, or use the URL shown by the deployment job.
+
+With the current organization and repository names, the default project-site address is `https://sustainable-cpss-group.github.io/sustainable-cpss.github.io/`. A configured custom domain replaces that address; use the URL in Pages settings as the source of truth. The repository name alone does not create `sustainable-cpss.github.io` as a domain.
+
+GitHub hosts the built pages. You do not need a server or a computer running Docker after deployment. Later changes merged into `main` are published automatically. The `gh-pages` branch is not used by the Astro deployment workflow.
+
+If a deployment fails, open the failed job under **Actions** to see the first error. After fixing the problem, rerun the workflow on `main`. GitHub Pages must be available for the repository’s visibility and organization plan; see [GitHub’s Pages setup documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 
 The workflows are in `.github/workflows/`. Deployment permissions are limited to the deployment job, and the build uses the committed `package-lock.json` for consistent dependencies.
 
