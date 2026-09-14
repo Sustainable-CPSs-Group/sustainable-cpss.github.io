@@ -3,7 +3,7 @@ title: Optimal asymmetric communication protocol at ACM CoNEXT 2026
 date: 2026-09-15T10:00:00+02:00
 description: News and research from the Sustainable Cyber-Physical Systems Focus Group at TUM.
 tags: [neighbor-discovery, energy-harvesting, publications]
-bibliography:kindt26c.bib
+bibliography:kindt2026asymmetric.bib
 ---
 
 When two energy-constrained, wireless devices communicate without using synchronized clocks, beacons need to be sent multiple times until being received by the remote device, because devices are duty-cycled to save energy.
