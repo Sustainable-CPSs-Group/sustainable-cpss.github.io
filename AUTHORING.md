@@ -20,9 +20,9 @@ The homepage introduction and its search description are in `src/content/pages/a
 
 The robot-workcell diagram near the top of the homepage is in `src/assets/img/project-overview/robot-workcell.svg`. Open it in an SVG vector editor to move the robot, boxes, arrows, and labels. The text remains editable. You can also edit the SVG in a text editor. Save changes to the same file and check the homepage for text overlaps.
 
-The caption and accessible description are in `src/content/pages/overview.md`: `title` is the visible caption, `description` is the image alternative text, and the Markdown below the closing `---` is the expandable case-study explanation. Update these when the picture changes. Editing the SVG does not automatically change the Markdown, or vice versa.
+The caption and accessible description are in `src/content/pages/overview.md`: `title` is the caption printed under the figure, and `description` is the image alternative text. The Markdown below the closing `---` is kept in the file but is not shown on the site. Update the caption when the picture changes. Editing the SVG does not automatically change the Markdown, or vice versa.
 
-The figure scales to the available width without cropping. Readers can open the full-size SVG or expand the text explanation, including on small screens. The surrounding layout is in `src/components/ProjectOverview.astro`, which uses Astro’s image component. No extra dependency is needed to build the figure.
+The figure scales to the available width without cropping, including on small screens. The surrounding layout is in `src/components/ProjectOverview.astro`, which uses Astro’s image component. No extra dependency is needed to build the figure.
 
 ## Write a post
 

@@ -10,7 +10,7 @@ EXPOSE 4321
 CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
 
 FROM dependencies AS build
-ARG ASTRO_SITE=https://sustainable-cpss-group.github.io
+ARG ASTRO_SITE=https://sustainable-cpss.github.io
 ARG ASTRO_BASE=/
 ENV ASTRO_SITE=${ASTRO_SITE} ASTRO_BASE=${ASTRO_BASE}
 COPY . .

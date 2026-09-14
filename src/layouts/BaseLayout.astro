@@ -48,7 +48,7 @@ const nav = [
         <nav aria-label="Primary navigation">
           {nav.map(([label, href, key]) => <a href={withBase(href)} aria-current={active === key ? "page" : undefined}>{label}</a>)}
         </nav>
-        <a class="header-link" href="https://github.com/Sustainable-CPSs-Group">GitHub <span aria-hidden="true">↗</span></a>
+        <a class="header-link" href="https://github.com/Sustainable-CPSs">GitHub <span aria-hidden="true">↗</span></a>
       </div>
     </header>
     <main id="main"><slot /></main>

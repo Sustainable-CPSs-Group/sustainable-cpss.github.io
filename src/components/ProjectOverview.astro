@@ -1,45 +1,19 @@
 ---
 import { Image } from "astro:assets";
-import { getEntry, render } from "astro:content";
-import { withBase } from "../lib/paths";
+import { getEntry } from "astro:content";
 import robotWorkcell from "../assets/img/project-overview/robot-workcell.svg";
 
 const overview = await getEntry("pages", "overview");
 if (!overview) throw new Error("Missing project overview content");
-const { Content } = await render(overview);
 ---
 
 <figure class="project-overview shell" aria-labelledby="overview-caption">
-  <a class="figure-link" href={robotWorkcell.src} aria-label="Open the robot-workcell figure at full size">
-    <Image src={robotWorkcell} alt={overview.data.description} loading="eager" fetchpriority="high" />
-  </a>
-  <figcaption id="overview-caption">
-    <div class="caption-heading">
-      <p>{overview.data.title}</p>
-      <div class="figure-actions">
-        <a href={robotWorkcell.src}>Open full-size figure</a>
-        <a href={withBase("/research/")}>Explore the research</a>
-      </div>
-    </div>
-    <details>
-      <summary>Read the case study</summary>
-      <div class="case-study"><Content /></div>
-    </details>
-  </figcaption>
+  <Image src={robotWorkcell} alt={overview.data.description} loading="eager" fetchpriority="high" />
+  <figcaption id="overview-caption">{overview.data.title}</figcaption>
 </figure>
 
 <style>
   .project-overview { margin-block: 0 2.5rem; padding-block: .75rem 1rem; border-block: 1px solid var(--line); }
-  .figure-link { display: block; }
-  .figure-link img { display: block; width: 100%; height: auto; }
-  figcaption { border-top: 1px solid var(--line); padding-top: 1rem; font-size: .88rem; line-height: 1.65; color: var(--muted); }
-  .caption-heading { display: flex; justify-content: space-between; align-items: baseline; gap: .75rem 2rem; flex-wrap: wrap; }
-  .caption-heading p { margin: 0; }
-  .figure-actions { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
-  details { margin-top: .75rem; }
-  summary { cursor: pointer; color: var(--green); width: fit-content; }
-  .case-study { max-width: var(--reading); margin-top: 1rem; }
-  .case-study :global(p) { margin: 0 0 .75rem; }
-  .case-study :global(ol) { padding-left: 1.5rem; }
-  .case-study :global(li + li) { margin-top: .6rem; }
+  .project-overview img { display: block; width: 100%; height: auto; }
+  figcaption { border-top: 1px solid var(--line); margin-top: .75rem; padding-top: 1rem; font-size: .88rem; line-height: 1.65; color: var(--muted); }
 </style>

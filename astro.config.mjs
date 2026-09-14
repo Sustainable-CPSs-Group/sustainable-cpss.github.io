@@ -10,7 +10,7 @@ import remarkFigures from "./src/lib/remark-figures.mjs";
 const base = process.env.ASTRO_BASE || "/";
 
 export default defineConfig({
-  site: process.env.ASTRO_SITE || "https://sustainable-cpss-group.github.io",
+  site: process.env.ASTRO_SITE || "https://sustainable-cpss.github.io",
   base,
   image: { layout: "constrained", objectFit: "contain" },
   integrations: [sitemap()],

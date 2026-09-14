@@ -1,5 +1,5 @@
 ---
-title: Sustainable CPS in a robot workcell — an illustrative research scenario.
+title: Sensors on a robot arm harvest their own energy, watch a joint for signs of wear, and send only what matters over a low power link. The aim is fewer battery changes and longer equipment life. It is a scenario we are working towards, not something we have built yet.
 description: Sensors on a robot arm harvest energy, monitor joint condition, and send low-power wireless reports. AI and an engineer use the evidence to adapt sensing and plan maintenance.
 ---
 

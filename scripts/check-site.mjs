@@ -7,7 +7,7 @@ function elements(node) {
   return [node, ...(node.childNodes || []).flatMap(elements)];
 }
 
-export async function checkSite({ directory = "dist", base = "/", site = "https://sustainable-cpss-group.github.io" } = {}) {
+export async function checkSite({ directory = "dist", base = "/", site = "https://sustainable-cpss.github.io" } = {}) {
   const root = resolve(directory);
   const prefix = base === "/" ? "" : "/" + base.replace(/^\/+|\/+$/g, "");
   const origin = new URL(site).origin;

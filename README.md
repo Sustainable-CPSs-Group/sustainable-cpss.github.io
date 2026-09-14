@@ -17,7 +17,7 @@ Open [localhost:4321](http://localhost:4321). The first build downloads the tool
 If you have not downloaded the repository yet:
 
 ```bash
-git clone https://github.com/Sustainable-CPSs-Group/sustainable-cpss.github.io.git
+git clone https://github.com/Sustainable-CPSs/sustainable-cpss.github.io.git
 cd sustainable-cpss.github.io
 ```
 
@@ -31,7 +31,7 @@ Leave the terminal running while you edit. Saved changes to text, images, and st
 | --- | --- |
 | Homepage introduction | `src/content/pages/about.md` |
 | Robot-workcell figure (editable SVG) | `src/assets/img/project-overview/robot-workcell.svg` |
-| Figure caption, alternative text, and case study | `src/content/pages/overview.md` |
+| Figure caption and alternative text | `src/content/pages/overview.md` |
 | Research description and homepage research areas | `src/content/pages/research.md` |
 | People and biographies | `src/content/people/` |
 | Research posts | `src/content/posts/` |
@@ -112,7 +112,7 @@ A repository administrator needs to select **Settings → Pages → Build and de
 3. Open **Actions → Deploy to GitHub Pages** and wait for the build and deployment jobs to finish. If an environment approval is requested, a repository maintainer must approve it.
 4. Open **Settings → Pages → Visit site**, or use the URL shown by the deployment job.
 
-With the current organization and repository names, the default project-site address is `https://sustainable-cpss-group.github.io/sustainable-cpss.github.io/`. A configured custom domain replaces that address; use the URL in Pages settings as the source of truth. The repository name alone does not create `sustainable-cpss.github.io` as a domain.
+The repository name matches the organization name, so GitHub serves this as an organization site at `https://sustainable-cpss.github.io/`. A configured custom domain replaces that address; use the URL shown in Pages settings as the source of truth.
 
 GitHub hosts the built pages. You do not need a server or a computer running Docker after deployment. Later changes merged into `main` are published automatically. The `gh-pages` branch is not used by the Astro deployment workflow.
 
