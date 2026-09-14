@@ -1,0 +1,28 @@
+---
+import { withBase } from "../lib/paths";
+import { formatAuthors, venue, type BibEntry } from "../lib/bibtex";
+interface Props { entry: BibEntry; showYear?: boolean }
+const { entry, showYear = true } = Astro.props;
+const paperURL = entry.fields.doi
+  ? `https://doi.org/${entry.fields.doi}`
+  : entry.fields.url || entry.fields.pdf;
+---
+<article class="publication" id={`ref-${entry.key}`} data-publication={`${entry.fields.title} ${entry.fields.author} ${entry.fields.year}`.toLowerCase()}>
+  <h3>{paperURL ? <a href={withBase(paperURL)}>{entry.fields.title}</a> : entry.fields.title}</h3>
+  <p class="pub-authors">{formatAuthors(entry.fields.author)}</p>
+  <div class="pub-meta">
+    <span class="pub-venue">{venue(entry)}</span>
+    {entry.fields.abbr && <span class="pub-label">{entry.fields.abbr}</span>}
+    {showYear && <span>{entry.fields.year}</span>}
+  </div>
+  {entry.fields.note && <p class="pub-note">{entry.fields.note}</p>}
+  <div class="pub-actions">
+    {entry.fields.doi && <a href={`https://doi.org/${entry.fields.doi}`}>DOI</a>}
+    {entry.fields.url && <a href={entry.fields.url}>Publisher</a>}
+    {entry.fields.pdf && <a href={withBase(entry.fields.pdf)}>PDF</a>}
+    <details>
+      <summary>BibTeX</summary>
+      <pre><code>{`@${entry.type}{${entry.key},\n${Object.entries(entry.fields).map(([key, value]) => `  ${key} = {${value}}`).join(",\n")}\n}`}</code></pre>
+    </details>
+  </div>
+</article>

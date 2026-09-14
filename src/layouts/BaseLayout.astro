@@ -1,0 +1,79 @@
+---
+import { withBase } from "../lib/paths";
+import "katex/dist/katex.min.css";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  active?: string;
+}
+
+const {
+  title,
+  description = "We study how cyber-physical systems can use less energy, operate safely, and require less maintenance.",
+  active,
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname.replace(/\/404\/$/, "/404.html"), Astro.site || Astro.url.origin);
+const pageTitle = title ? `${title} · Sustainable CPS` : "Sustainable Cyber-Physical Systems";
+const nav = [
+  ["Research", "/research/", "research"],
+  ["People", "/people/", "people"],
+  ["Publications", "/publications/", "publications"],
+  ["Updates", "/blog/", "updates"],
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#092f2a" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <link rel="canonical" href={canonical} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href={withBase("/")} aria-label="Sustainable Cyber-Physical Systems home">
+          Sustainable Cyber-Physical Systems
+        </a>
+        <nav aria-label="Primary navigation">
+          {nav.map(([label, href, key]) => <a href={withBase(href)} aria-current={active === key ? "page" : undefined}>{label}</a>)}
+        </nav>
+        <a class="header-link" href="https://github.com/Sustainable-CPSs">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <p class="eyebrow">Sustainable Cyber-Physical Systems</p>
+          <p>Focus Group · TUM Institute for Advanced Study</p>
+        </div>
+        <div>
+          <p class="footer-heading">Hosted at</p>
+          <a href="https://www.ias.tum.de/">TUM Institute for Advanced Study</a>
+          <a href="https://www.ce.cit.tum.de/en/lis/">Chair of Integrated Systems</a>
+          <a href="https://rtsl.cps.mw.tum.de">Chair of CPS in Production Engineering</a>
+        </div>
+        <div>
+          <p class="footer-heading">Group</p>
+          <a href={withBase("/research/")}>Research</a>
+          <a href={withBase("/publications/")}>Publications</a>
+          <a href={withBase("/blog/")}>Updates</a>
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© {new Date().getFullYear()} Sustainable CPS Focus Group</span>
+      </div>
+    </footer>
+  </body>
+</html>

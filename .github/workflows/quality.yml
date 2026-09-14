@@ -1,0 +1,39 @@
+name: Quality
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quality-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Check site (${{ matrix.path }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        path: [root, project]
+        include:
+          - path: root
+            base: /
+          - path: project
+            base: /sustainable-cpss.github.io/
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Check and build in Docker
+        env:
+          ASTRO_BASE: ${{ matrix.base }}
+        run: |
+          docker build --target build \
+            --build-arg ASTRO_BASE="$ASTRO_BASE" \
+            --tag sustainable-cpss-check .

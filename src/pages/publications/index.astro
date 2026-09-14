@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageIntro from "../../components/PageIntro.astro";
+import PublicationList from "../../components/PublicationList.astro";
+import { parseBibtex } from "../../lib/bibtex";
+import publicationsRaw from "../../data/publications.bib?raw";
+const publications = parseBibtex(publicationsRaw);
+---
+<BaseLayout title="Publications" description="Research publications from the Sustainable CPS Focus Group." active="publications">
+  <PageIntro title="Publications" description="Papers by members of the group. Each entry includes publication details and a BibTeX citation." />
+  <section class="section shell" style="padding-top:0">
+    <label for="publication-filter" class="eyebrow">Filter publications</label>
+    <input class="filter" id="publication-filter" type="search" placeholder="Search by title, author, or year…" />
+    <PublicationList entries={publications} groupByYear />
+    <p id="publication-empty" role="status" hidden>No papers match your search. Try another title, author, or year.</p>
+  </section>
+  <script>
+    const input = document.querySelector<HTMLInputElement>("#publication-filter");
+    const publications = [...document.querySelectorAll<HTMLElement>("[data-publication]")];
+    const empty = document.querySelector<HTMLElement>("#publication-empty");
+    input?.addEventListener("input", () => {
+      const query = input.value.trim().toLowerCase();
+      let visible = 0;
+      publications.forEach((publication) => {
+        const matches = publication.dataset.publication?.includes(query) ?? false;
+        publication.hidden = !matches;
+        if (matches) visible++;
+      });
+      document.querySelectorAll<HTMLElement>("[data-publication-group]").forEach((group) => {
+        group.hidden = !group.querySelector("[data-publication]:not([hidden])");
+      });
+      if (empty) empty.hidden = visible !== 0;
+    });
+  </script>
+</BaseLayout>

@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets";
+import { getEntry } from "astro:content";
+import robotWorkcell from "../assets/img/project-overview/robot-workcell.svg";
+
+const overview = await getEntry("pages", "overview");
+if (!overview) throw new Error("Missing project overview content");
+---
+
+<figure class="project-overview shell" aria-labelledby="overview-caption">
+  <Image src={robotWorkcell} alt={overview.data.description} loading="eager" fetchpriority="high" />
+  <figcaption id="overview-caption">{overview.data.title}</figcaption>
+</figure>
+
+<style>
+  .project-overview { margin-block: 0 2.5rem; padding-block: .75rem 1rem; border-block: 1px solid var(--line); }
+  .project-overview img { display: block; width: 100%; height: auto; }
+  figcaption { border-top: 1px solid var(--line); margin-top: .75rem; padding-top: 1rem; font-size: .88rem; line-height: 1.65; color: var(--muted); }
+</style>

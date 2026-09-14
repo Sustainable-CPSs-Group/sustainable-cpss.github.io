@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="640" viewBox="0 0 1400 640" role="img" aria-labelledby="title description">
+  <title id="title">Sustainable CPS in a robot workcell</title>
+  <desc id="description">Illustrative research scenario. Sensors attached to a robot arm monitor vibration and temperature. Harvested energy supports intermittent sensing and local inference. Low-power wireless communication sends useful reports to AI and an engineer, who can request more measurements and plan maintenance. The complete batteryless system is a research goal.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 9 5 1 9" fill="none" stroke="#35634e" stroke-width="1.5"/></marker>
+    <marker id="energy-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 9 5 1 9" fill="none" stroke="#98763c" stroke-width="1.5"/></marker>
+  </defs>
+  <rect width="1400" height="640" fill="#fcfcfa"/>
+  <g id="workcell">
+    <rect x="40" y="40" width="684" height="516" rx="5" fill="#f1f4ef" stroke="#d5ded5"/>
+    <text x="62" y="71" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#626b65" letter-spacing="1">ROBOT ARM WITH ATTACHED SENSORS</text>
+    <g id="workcell-floor" stroke="#cbd5ca" fill="none">
+      <path d="M62 486h640" stroke-width="2"/>
+      <path d="M90 486l-14 14M124 486l-14 14M158 486l-14 14M192 486l-14 14M226 486l-14 14M260 486l-14 14M294 486l-14 14M328 486l-14 14M362 486l-14 14M396 486l-14 14M430 486l-14 14M464 486l-14 14M498 486l-14 14M532 486l-14 14M566 486l-14 14M600 486l-14 14M634 486l-14 14M668 486l-14 14M702 486l-14 14" stroke-width="1.5" stroke-opacity=".7"/>
+    </g>
+    <g id="conveyor" stroke="#839286" stroke-width="2" fill="#e4eae3" stroke-linejoin="round">
+      <path d="M488 412h10v74h-10ZM672 412h10v74h-10Z" fill="#dbe2da"/>
+      <rect x="470" y="388" width="230" height="24"/>
+      <path d="M494 400a8 8 0 1 0-16 0 8 8 0 1 0 16 0M520 400a8 8 0 1 0-16 0 8 8 0 1 0 16 0M546 400a8 8 0 1 0-16 0 8 8 0 1 0 16 0M572 400a8 8 0 1 0-16 0 8 8 0 1 0 16 0M598 400a8 8 0 1 0-16 0 8 8 0 1 0 16 0M624 400a8 8 0 1 0-16 0 8 8 0 1 0 16 0M650 400a8 8 0 1 0-16 0 8 8 0 1 0 16 0M676 400a8 8 0 1 0-16 0 8 8 0 1 0 16 0" fill="#f1f4ef" stroke-width="1.2" stroke-opacity=".85"/>
+      <rect x="470" y="372" width="230" height="16" fill="#eef2ed"/>
+      <rect x="586" y="338" width="28" height="34" rx="2" fill="#d2dfce"/>
+    </g>
+    <g id="robot-arm" stroke="#526f5b" stroke-width="3" stroke-linejoin="round">
+      <g id="robot-base">
+        <path d="M178 486h144l-16-44H194Z" fill="#c8d6c6"/>
+        <rect x="206" y="398" width="88" height="44" rx="6" fill="#d0dccd"/>
+      </g>
+      <g id="robot-links">
+        <path id="upper-arm" d="M270.6 405.7L338.6 223.7A22 22 0 0 0 297.4 208.3L229.4 390.3A22 22 0 0 0 270.6 405.7Z" fill="#dce5d8"/>
+        <path id="forearm" d="M320.5 233.8L522.5 205.8A18 18 0 0 0 517.5 170.2L315.5 198.2A18 18 0 0 0 320.5 233.8Z" fill="#e2e8dd"/>
+        <path id="wrist-link" d="M513.5 200.4L593.5 242.4A14 14 0 0 0 606.5 217.6L526.5 175.6A14 14 0 0 0 513.5 200.4Z" fill="#d8e2d4"/>
+        <path id="tool-flange" d="M589 230L589 262A11 11 0 0 0 611 262L611 230A11 11 0 0 0 589 230Z" fill="#dce5d8"/>
+      </g>
+      <g id="gripper" fill="#d8e2d4">
+        <rect x="570" y="262" width="60" height="16" rx="3"/>
+        <path d="M570 278h12v52h-12ZM618 278h12v52h-12Z"/>
+      </g>
+      <g id="robot-joints" fill="#c4d3c1">
+        <circle cx="250" cy="398" r="27"/>
+        <circle cx="318" cy="216" r="30"/>
+        <circle cx="520" cy="188" r="24"/>
+        <circle cx="600" cy="230" r="19"/>
+      </g>
+      <g id="joint-hubs" fill="#f5f7f1" stroke-width="2.2">
+        <circle cx="250" cy="398" r="10"/>
+        <circle cx="318" cy="216" r="11"/>
+        <circle cx="520" cy="188" r="9"/>
+        <circle cx="600" cy="230" r="7"/>
+      </g>
+    </g>
+    <g id="attached-sensors" fill="#28634f" stroke="#fcfcfa" stroke-width="2">
+      <g transform="rotate(20.5 283.8 244.7)"><rect x="272.8" y="231.2" width="22" height="27" rx="3"/></g>
+      <g transform="rotate(82.1 461 178)"><rect x="450" y="164.5" width="22" height="27" rx="3"/></g>
+      <circle cx="283.8" cy="244.7" r="2.5" fill="#fcfcfa" stroke="none"/>
+      <circle cx="461" cy="178" r="2.5" fill="#fcfcfa" stroke="none"/>
+    </g>
+    <g id="sensor-callout" fill="none" stroke="#35634e" stroke-width="1.5">
+      <path d="M272 232 212 172H92"/>
+    </g>
+    <text x="92" y="164" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#27332f">Vibration and temperature</text>
+    <g id="energy-harvesting" stroke="#98763c" stroke-width="1.7" fill="none" stroke-linecap="round">
+      <circle cx="104" cy="300" r="12"/><path d="M104 276v5m0 38v5m-24-24h5m38 0h5m-41-17 4 4m26 26 4 4m0-34-4 4m-26 26-4 4"/>
+      <path d="M82 330h44l-8 24H74Zm-4 12h44m-25-12-8 24m22-24-8 24"/>
+      <path d="M129 342h61v-94h76" marker-end="url(#energy-arrow)"/>
+    </g>
+    <text x="73" y="383" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#745b30">Harvest light</text>
+    <text x="73" y="404" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#745b30">or vibration</text>
+    <text x="73" y="538" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#626b65">Monitor a joint for signs of wear.</text>
+  </g>
+  <g id="reports-to-sensor-model" fill="none" stroke="#35634e" stroke-width="1.6">
+    <path d="M455 164V97h307" marker-end="url(#arrow)"/>
+  </g>
+  <g id="sensor-processing">
+    <rect x="774" y="40" width="586" height="130" rx="5" fill="#ffffff" stroke="#cedbd2"/>
+    <text x="798" y="90" font-family="Georgia, Times New Roman, serif" font-size="23" fill="#27332f">1. Sense with the energy available</text>
+    <text x="798" y="126" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#27332f">Sensing and local inference continue across power cycles.</text>
+  </g>
+  <path d="M1067 170v43" fill="none" stroke="#35634e" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <g id="wireless-network">
+    <rect x="774" y="213" width="586" height="130" rx="5" fill="#ffffff" stroke="#cedbd2"/>
+    <text x="798" y="263" font-family="Georgia, Times New Roman, serif" font-size="23" fill="#27332f">2. Communicate what matters</text>
+    <text x="798" y="299" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#27332f">Low-power communication, used only when there is something to report.</text>
+  </g>
+  <path d="M1067 343v43" fill="none" stroke="#35634e" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <g id="diagnostics-and-engineer">
+    <rect x="774" y="386" width="586" height="130" rx="5" fill="#ffffff" stroke="#cedbd2"/>
+    <g id="engineer-and-display" transform="translate(1258 416)" stroke="#526f5b" stroke-width="2" fill="none" stroke-linejoin="round">
+      <rect x="0" y="4" width="47" height="34" rx="3"/><path d="M8 27h7l6-13 7 18 7-11h5M23 38v10m-13 0h26"/>
+      <circle cx="63" cy="36" r="8"/><path d="M51 63v-6a12 12 0 0 1 24 0v6"/>
+    </g>
+    <text x="798" y="436" font-family="Georgia, Times New Roman, serif" font-size="23" fill="#27332f">3. Diagnose with an engineer</text>
+    <text x="798" y="472" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#27332f">AI and an engineer review the evidence together.</text>
+  </g>
+  <g id="feedback-to-sensors" fill="none" stroke="#35634e" stroke-width="1.6" stroke-dasharray="5 4">
+    <path d="M774 460h-26V124H471v48" marker-end="url(#arrow)"/>
+  </g>
+  <text x="556" y="152" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#35634e">Adapt sampling</text>
+  <text x="556" y="171" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#35634e">and radio schedules</text>
+  <g id="maintenance-feedback" fill="none" stroke="#35634e" stroke-width="1.6">
+    <path d="M1112 516v94H452v-152" marker-end="url(#arrow)"/>
+  </g>
+  <text x="782" y="602" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#35634e">Plan maintenance from measured condition</text>
+</svg>

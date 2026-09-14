@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import PublicationList from "../../../components/PublicationList.astro";
+import { parseBibtex } from "../../../lib/bibtex";
+const references = import.meta.glob("../../../content/references/*.bib", { query: "?raw", import: "default", eager: true }) as Record<string, string>;
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+  return posts.map((post) => ({ params: { year: String(post.data.date.getUTCFullYear()), slug: post.id.replace(/^\d{4}-\d{2}-\d{2}-/, "") }, props: { post } }));
+}
+const { post } = Astro.props as { post: CollectionEntry<"posts"> };
+const { Content } = await render(post);
+const referenceSource = post.data.bibliography ? references[`../../../content/references/${post.data.bibliography}`] : undefined;
+if (post.data.bibliography && !referenceSource) throw new Error(`Missing bibliography for ${post.id}: ${post.data.bibliography}`);
+const bibliography = referenceSource ? parseBibtex(referenceSource) : [];
+---
+<BaseLayout title={post.data.title} description={post.data.description} active="updates">
+  <header class="post-header shell"><div class="post-meta"><time datetime={post.data.date.toISOString()}>{post.data.date.toLocaleDateString("en", { dateStyle: "long" })}</time>{post.data.tags.map((tag) => <span>· {tag}</span>)}</div><h1>{post.data.title}</h1><p class="lede">{post.data.description}</p></header>
+  {post.data.hero && <Image class="post-hero" src={post.data.hero} alt={post.data.heroAlt || ""} width={1100} priority />}
+  <article class="section shell prose" style="padding-top:0"><Content />{bibliography.length > 0 && <section class="references"><h2>References</h2><PublicationList entries={bibliography} /></section>}</article>
+</BaseLayout>

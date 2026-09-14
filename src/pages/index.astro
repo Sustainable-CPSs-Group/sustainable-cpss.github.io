@@ -1,0 +1,57 @@
+---
+import { withBase } from "../lib/paths";
+import { Image } from "astro:assets";
+import { getCollection, getEntry, render } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PublicationList from "../components/PublicationList.astro";
+import ProjectOverview from "../components/ProjectOverview.astro";
+import { parseBibtex } from "../lib/bibtex";
+import publicationsRaw from "../data/publications.bib?raw";
+
+const about = await getEntry("pages", "about");
+if (!about) throw new Error("Missing about page content");
+const { Content } = await render(about);
+const posts = (await getCollection("posts")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 2);
+const news = (await getCollection("news")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
+const selectedPublications = parseBibtex(publicationsRaw).filter((entry) => entry.fields.selected === "true");
+const research = await getEntry("pages", "research");
+if (!research) throw new Error("Missing research page content");
+const directions = research.data.areas;
+---
+<BaseLayout description={about.data.description}>
+  <header class="page-intro shell home-intro">
+    <p class="eyebrow">TUM Institute for Advanced Study · Focus Group</p>
+    <h1>{about.data.title}</h1>
+  </header>
+
+  <ProjectOverview />
+
+  <div class="shell overview-grid">
+    <article class="prose" aria-label="About the group"><Content /></article>
+    <aside class="news-panel" aria-labelledby="news-title">
+      <h2 id="news-title">News</h2>
+      <div class="news-list">
+        {news.map((item) => <a class="news-item" href={withBase(item.data.link || "/blog/")}><time datetime={item.data.date.toISOString()}>{item.data.date.toLocaleDateString("en", { year: "numeric", month: "short", day: "numeric" })}</time><p>{item.data.title}</p></a>)}
+      </div>
+    </aside>
+  </div>
+
+  <section class="section shell">
+    <div class="section-heading"><h2>Research areas</h2><a href={withBase("/research/")}>Research overview</a></div>
+    <div class="research-areas">
+      {directions.map(({ title, description }) => <article><h3>{title}</h3><p>{description}</p></article>)}
+    </div>
+  </section>
+
+  <section class="section shell">
+    <div class="section-heading"><h2>Selected publications</h2><a href={withBase("/publications/")}>All publications</a></div>
+    <PublicationList entries={selectedPublications} />
+  </section>
+
+  <section class="section shell">
+    <div class="section-heading"><h2>Research updates</h2><a href={withBase("/blog/")}>All updates</a></div>
+    <div class="post-grid">
+      {posts.map((post) => <a class="post-card" href={withBase(`/blog/${post.data.date.getUTCFullYear()}/${post.id.replace(/^\d{4}-\d{2}-\d{2}-/, "")}/`)}>{post.data.hero && <Image src={post.data.hero} alt={post.data.heroAlt || ""} width={540} loading="lazy" />}<div class="post-body"><time datetime={post.data.date.toISOString()}>{post.data.date.toLocaleDateString("en", { dateStyle: "medium" })}</time><h2>{post.data.title}</h2><p>{post.data.description}</p><span class="read">Read update</span></div></a>)}
+    </div>
+  </section>
+</BaseLayout>

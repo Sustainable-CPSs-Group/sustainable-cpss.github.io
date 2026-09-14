@@ -1,0 +1,17 @@
+---
+import { Image } from "astro:assets";
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+export async function getStaticPaths() {
+  const people = await getCollection("people");
+  return people.map((person) => ({ params: { id: person.id }, props: { person } }));
+}
+const { person } = Astro.props as { person: CollectionEntry<"people"> };
+const { Content } = await render(person);
+---
+<BaseLayout title={person.data.name} description={person.data.summary} active="people">
+  <article class="section shell content-grid profile">
+    <div class="prose"><header class="profile-header"><p class="eyebrow">{person.data.groupRole}</p><h1>{person.data.name}</h1><p class="institution">{person.data.role}<br />{person.data.institution}</p></header><Content /><p class="link-list">{person.data.email && <a href={`mailto:${person.data.email}`}>Email</a>}{person.data.links.map((link) => <a href={link.url}>{link.label} ↗</a>)}</p></div>
+    <Image class="profile-portrait" src={person.data.image} alt={person.data.imageAlt} width={480} layout="constrained" loading="lazy" />
+  </article>
+</BaseLayout>

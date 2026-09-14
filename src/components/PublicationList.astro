@@ -1,0 +1,24 @@
+---
+import Publication from "./Publication.astro";
+import type { BibEntry } from "../lib/bibtex";
+interface Props { entries: BibEntry[]; groupByYear?: boolean }
+const { entries, groupByYear = false } = Astro.props;
+const years = [...new Set(entries.map((entry) => entry.fields.year || "Undated"))]
+  .sort((a, b) => (Number(b) || 0) - (Number(a) || 0));
+---
+{groupByYear ? (
+  <div class="publication-years">
+    {years.map((year) => (
+      <section class="publication-year" data-publication-group aria-label={`Publications from ${year}`}>
+        <h2>{year}</h2>
+        <div class="publication-list">
+          {entries.filter((entry) => (entry.fields.year || "Undated") === year).map((entry) => <Publication entry={entry} showYear={false} />)}
+        </div>
+      </section>
+    ))}
+  </div>
+) : (
+  <div class="publication-list">
+    {entries.map((entry) => <Publication entry={entry} />)}
+  </div>
+)}
