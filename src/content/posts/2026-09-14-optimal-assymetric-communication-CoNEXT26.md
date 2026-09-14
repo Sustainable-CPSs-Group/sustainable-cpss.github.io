@@ -1,6 +1,6 @@
 ---
 title: Optimal asymmetric communication protocol at ACM CoNEXT 2026 
-date: 2026-09-15T10:00:00+02:00
+date: 2026-09-14T10:00:00+02:00
 description: News and research from the Sustainable Cyber-Physical Systems Focus Group at TUM.
 tags: [neighbor-discovery,asymmetric-communication,energy-harvesting,publications]
 bibliography: kindt2026asymmetric.bib
