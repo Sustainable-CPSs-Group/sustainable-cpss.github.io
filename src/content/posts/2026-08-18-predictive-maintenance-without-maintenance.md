@@ -5,7 +5,7 @@ description: Our RTCSA demo studies small vibration classifiers as a step toward
 tags: [publications, energy-harvesting, tinyml]
 hero: ../../assets/img/blog/predictive-maintenance/architecture.png
 heroAlt: Batteryless sensor architecture and fan case study pipeline
-bibliography: predictive-maintenance.bib
+references: [kindt2026predictive]
 ---
 
 Our demo paper **“Predictive Maintenance without Maintenance”** has been accepted at **RTCSA 2026** [@kindt2026predictive]. The authors are Philipp H. Kindt, Sebastiano Gaiardelli, Marco Caccamo, Thomas Wild, Andreas Herkersdorf, and Samarjit Chakraborty.

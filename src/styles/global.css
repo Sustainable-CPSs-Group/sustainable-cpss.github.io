@@ -110,7 +110,7 @@ nav a[aria-current="page"] { color: var(--green); text-decoration: underline; te
 .pub-actions a, .pub-actions summary { color: var(--green); font-size: .82rem; cursor: pointer; }
 .pub-actions details { min-width: 0; width: 100%; }
 .pub-actions details:not([open]) { width: auto; }
-.pub-actions pre { overflow-x: auto; padding: 1rem; background: var(--soft); font-size: .75rem; }
+.pub-actions pre { overflow-x: auto; padding: 1rem; background: var(--soft); color: var(--ink); font-size: .75rem; }
 .filter { width: min(100%, 36rem); display: block; margin: .5rem 0 1rem; padding: .7rem .85rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); color: var(--ink); font: inherit; }
 
 .post-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }

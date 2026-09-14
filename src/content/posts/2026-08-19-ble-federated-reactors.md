@@ -5,7 +5,7 @@ description: Our new paper uses latency budgets to configure BLE links for Lingu
 tags: [publications, ble, lingua-franca]
 hero: ../../assets/img/blog/ble-federated-reactors/overview.png
 heroAlt: Two federates linked by a Bluetooth Low Energy network channel
-bibliography: ble-federated-reactors.bib
+references: [gaiardelli2026budget]
 ---
 
 Our paper **“Budget-Conditioned BLE Communication for Federated Reactors”** has been accepted for publication in *IEEE Embedded Systems Letters*, in the special issue for the Workshop on Time-Centric Reactive Software (TCRS) [@gaiardelli2026budget]. The authors are Sebastiano Gaiardelli, Philipp H. Kindt, and Samarjit Chakraborty.
