@@ -2,5 +2,5 @@
 ---
 date: 2026-09-14
 title: Our paper on optimal asymmetric ND has been accepted to the ACM International Conference on emerging Networking EXperiments and Technologies (CoNEXT).
-link: /blog/2026/CoNEXT26_asymmetric_communication/
+link: /blog/2026/optimal-asymmetric-communication-CoNEXT26/
 ---
