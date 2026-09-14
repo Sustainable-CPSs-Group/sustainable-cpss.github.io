@@ -18,4 +18,4 @@ links:
 ---
 
 Philipp Kindt studies wireless communication for devices with limited energy. His work covers neighbor discovery, connection scheduling, and the energy consumption of wireless protocols for cyber-physical systems and the Internet of Things.
-Within the group, he investigates how sensing nodes can operate without batteries and also AI models for anomaly detection. 
+In the group, he investigates how sensing nodes can operate without batteries and also AI models for anomaly detection, as well as the use of machine learning models for anomaly detection.
