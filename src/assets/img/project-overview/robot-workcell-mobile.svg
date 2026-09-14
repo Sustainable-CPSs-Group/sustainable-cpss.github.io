@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="380" height="636" viewBox="0 0 380 636" role="img" aria-labelledby="title description">
+  <title id="title">Self-powered condition monitoring across three example systems</title>
+  <desc id="description">Illustrative research scenario. Self-powered sensors are attached to three example systems: a robot arm, a building hull and a bridge. Harvested energy supports sensing and local inference across power cycles. Low-power communication carries reports only when there is something to say. AI and an engineer review the evidence, adapt sampling and radio schedules, and plan maintenance. The complete batteryless system is a research goal.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M1.5 1.5 9 5 1.5 8.5" fill="none" stroke="#35634e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="380" height="636" fill="#fcfcfa"/>
+  <g id="example-1">
+    <rect x="34" y="12" width="322" height="84" rx="3" fill="#f3f4ef" stroke="#dce3df"/>
+    <path d="M110 28V80" stroke="#dce3df" stroke-width="1" fill="none"/>
+    <text x="120" y="44" font-family="Georgia, &quot;Times New Roman&quot;, serif" font-size="15" fill="#27332f">Robot arm</text>
+    <text x="120" y="64" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="12" fill="#626b65">Joint vibration and temperature</text>
+    <text x="120" y="80" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="12" fill="#626b65">reveal developing wear.</text>
+    <g transform="translate(40 26) scale(0.5238)"><g stroke="#4f6b5c" stroke-width="3.2" stroke-linejoin="round"><path d="M0 96H126" stroke="#c3cec5" fill="none"/><path d="M14 96h40l-6-14H20Z" fill="#ccd9cd"/><rect x="22" y="60" width="24" height="22" rx="3" fill="#dbe4db"/><path d="M40 62.4L56 22.4A6.5 6.5 0 0 0 44 17.6L28 57.6A6.5 6.5 0 0 0 40 62.4Z" fill="#dbe4db"/><path d="M50.7 25.4L94.7 19.4A5.5 5.5 0 0 0 93.3 8.6L49.3 14.6A5.5 5.5 0 0 0 50.7 25.4Z" fill="#e9eee7"/><path d="M90.9 17.1L104.9 31.1A4.4 4.4 0 0 0 111.1 24.9L97.1 10.9A4.4 4.4 0 0 0 90.9 17.1Z" fill="#dbe4db"/><path d="M104.4 28L104.4 38A3.6 3.6 0 0 0 111.6 38L111.6 28A3.6 3.6 0 0 0 104.4 28Z" fill="#e9eee7"/><rect x="99" y="38" width="18" height="6" rx="2" fill="#dbe4db"/><path d="M100.5 44v7l3.5 4M115.5 44v7l-3.5 4" fill="none" stroke-linecap="round"/><circle cx="34" cy="60" r="8.5" fill="#ccd9cd"/><circle cx="50" cy="20" r="7.5" fill="#ccd9cd"/><circle cx="94" cy="14" r="6" fill="#ccd9cd"/><circle cx="108" cy="28" r="5" fill="#ccd9cd"/><circle cx="34" cy="60" r="3.4" fill="#fcfcfa" stroke-width="2.3"/><circle cx="50" cy="20" r="3" fill="#fcfcfa" stroke-width="2.3"/><circle cx="94" cy="14" r="2.4" fill="#fcfcfa" stroke-width="2.3"/><circle cx="108" cy="28" r="2" fill="#fcfcfa" stroke-width="2.3"/></g><g transform="rotate(22 43.6 36)"><rect x="36.6" y="27.5" width="14" height="17" rx="3.5" fill="#244b3e" stroke="#fcfcfa" stroke-width="4.2"/><path d="M45.5 30.4L41.7 36.6L44 36.6L42.4 41.6L46.1 35.4L44 35.4Z" fill="#e3a63c" stroke="none"/></g></g>
+  </g>
+  <g id="example-2">
+    <rect x="34" y="104" width="322" height="84" rx="3" fill="#f3f4ef" stroke="#dce3df"/>
+    <path d="M110 120V172" stroke="#dce3df" stroke-width="1" fill="none"/>
+    <text x="120" y="136" font-family="Georgia, &quot;Times New Roman&quot;, serif" font-size="15" fill="#27332f">Building hull</text>
+    <text x="120" y="156" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="12" fill="#626b65">Envelope temperature and humidity</text>
+    <text x="120" y="172" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="12" fill="#626b65">reveal heat loss and moisture.</text>
+    <g transform="translate(40 118) scale(0.5238)"><g stroke="#4f6b5c" stroke-width="3.2" stroke-linejoin="round"><path d="M0 96H126" stroke="#c3cec5" fill="none"/><path d="M13 96V2H113V96" fill="none" stroke="#c3cec5" stroke-width="2.5" stroke-dasharray="6.7 6.7"/><path d="M24 16h78v80H24Z" fill="#dbe4db"/><path d="M18 8h90v9H18Z" fill="#ccd9cd"/><rect x="32" y="28" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="2.5"/><rect x="56" y="28" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="2.5"/><rect x="80" y="28" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="2.5"/><rect x="32" y="52" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="2.5"/><rect x="56" y="52" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="2.5"/><rect x="80" y="52" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="2.5"/><path d="M53 96v-20h20v20" fill="#e9eee7"/></g><g transform="rotate(0 24 52)"><rect x="17" y="43.5" width="14" height="17" rx="3.5" fill="#244b3e" stroke="#fcfcfa" stroke-width="4.2"/><path d="M25.9 46.4L22.1 52.6L24.4 52.6L22.8 57.6L26.5 51.4L24.4 51.4Z" fill="#e3a63c" stroke="none"/></g></g>
+  </g>
+  <g id="example-3">
+    <rect x="34" y="196" width="322" height="84" rx="3" fill="#f3f4ef" stroke="#dce3df"/>
+    <path d="M110 212V264" stroke="#dce3df" stroke-width="1" fill="none"/>
+    <text x="120" y="228" font-family="Georgia, &quot;Times New Roman&quot;, serif" font-size="15" fill="#27332f">Bridge</text>
+    <text x="120" y="248" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="12" fill="#626b65">Deck vibration and strain</text>
+    <text x="120" y="264" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="12" fill="#626b65">reveal fatigue and damage.</text>
+    <g transform="translate(40 210) scale(0.5238)"><g stroke="#4f6b5c" stroke-width="3.2" stroke-linejoin="round"><path d="M0 96H126" stroke="#c3cec5" fill="none"/><path d="M18 70Q63 26 108 70" fill="none"/><path d="M34 57.1V70M48.5 50.3V70M63 48V70M77.5 50.3V70M92 57.1V70" fill="none" stroke-width="2.3"/><path d="M26 79h11v17H26ZM89 79h11v17H89Z" fill="#ccd9cd"/><path d="M6 70h114v9H6Z" fill="#dbe4db"/></g><g transform="rotate(0 63 88)"><rect x="56" y="79.5" width="14" height="17" rx="3.5" fill="#244b3e" stroke="#fcfcfa" stroke-width="4.2"/><path d="M64.9 82.4L61.1 88.6L63.4 88.6L61.8 93.6L65.5 87.4L63.4 87.4Z" fill="#e3a63c" stroke="none"/></g></g>
+  </g>
+  <g id="merge" fill="none" stroke="#35634e" stroke-width="1.5">
+    <path d="M356 54H366"/>
+    <path d="M356 146H366"/>
+    <path d="M356 238H366"/>
+    <path d="M366 54V238V290H190V300" marker-end="url(#arrow)"/>
+  </g>
+  <g fill="#35634e" stroke="none">
+    <circle cx="366" cy="54" r="2.6"/>
+    <circle cx="366" cy="146" r="2.6"/>
+    <circle cx="366" cy="238" r="2.6"/>
+  </g>
+  <g id="sensing">
+    <rect x="34" y="300" width="322" height="84" rx="3" fill="#ffffff" stroke="#dce3df"/>
+    <text x="50" y="328" font-family="Georgia, &quot;Times New Roman&quot;, serif" font-size="14.5" fill="#27332f">1. Sense with the energy available</text>
+    <text x="50" y="348" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="12" fill="#626b65">Harvested energy powers sensing and</text>
+    <text x="50" y="364" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="12" fill="#626b65">local inference across power cycles.</text>
+    <g transform="translate(322 352) scale(0.5000)" stroke="#4f6b5c" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="-17" y="-25" width="34" height="30" rx="3" fill="#e9eee7"/><path d="M-23-18h6M-23-10h6M-23-2h6M17-18h6M17-10h6M17-2h6"/><path d="M2.5 -17.6L-2.5 -9.2L0.5 -9.2L-1.7 -2.4L3.4 -10.8L0.5 -10.8Z" fill="#e3a63c" stroke="none"/><path d="M-24 21h5v-11h8v11h5M10 21h4v-11h8v11h4"/><path d="M-4 21h10" stroke="#c3cec5" stroke-dasharray="4 6"/></g>
+  </g>
+  <path d="M190 384V394" fill="none" stroke="#35634e" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <g id="communication">
+    <rect x="34" y="394" width="322" height="84" rx="3" fill="#ffffff" stroke="#dce3df"/>
+    <text x="50" y="422" font-family="Georgia, &quot;Times New Roman&quot;, serif" font-size="14.5" fill="#27332f">2. Communicate what matters</text>
+    <text x="50" y="442" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="12" fill="#626b65">Low-power communication, used only</text>
+    <text x="50" y="458" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="12" fill="#626b65">when there is something to report.</text>
+    <g transform="translate(322 446) scale(0.5000)" stroke="#4f6b5c" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="-24" y="-9" width="15" height="18" rx="3" fill="#dbe4db"/><path d="M-6.1 -12.6A16 16 0 0 1 -6.1 12.6"/><path d="M-0.6 -19.7A25 25 0 0 1 -0.6 19.7"/><circle cx="16" cy="0" r="3" fill="#244b3e" stroke="none"/></g>
+  </g>
+  <path d="M190 478V488" fill="none" stroke="#35634e" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <g id="diagnosis">
+    <rect x="34" y="488" width="322" height="84" rx="3" fill="#ffffff" stroke="#dce3df"/>
+    <text x="50" y="516" font-family="Georgia, &quot;Times New Roman&quot;, serif" font-size="14.5" fill="#27332f">3. Diagnose with an engineer</text>
+    <text x="50" y="536" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="12" fill="#626b65">AI and an engineer review the</text>
+    <text x="50" y="552" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="12" fill="#626b65">evidence together.</text>
+    <g transform="translate(322 540) scale(0.5000)" stroke="#4f6b5c" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="-27" y="-20" width="38" height="28" rx="3" fill="#e9eee7"/><path d="M-21-7h5l5-10 5 14 5-8h4"/><path d="M-8 8v8m-8 0h16"/><circle cx="24" cy="-6" r="6.5"/><path d="M14 16v-4a10 10 0 0 1 20 0v4"/></g>
+  </g>
+  <path d="M34 530H22V342H34" fill="none" stroke="#35634e" stroke-width="1.5" stroke-dasharray="4 3.5" marker-end="url(#arrow)"/>
+  <g id="maintenance" fill="none" stroke="#35634e" stroke-width="1.5">
+    <path d="M190 572V586H8V54"/>
+    <path d="M8 54H34" marker-end="url(#arrow)"/>
+    <path d="M8 146H34" marker-end="url(#arrow)"/>
+    <path d="M8 238H34" marker-end="url(#arrow)"/>
+  </g>
+  <g stroke="#35634e" stroke-width="1.5" fill="none">
+    <path d="M34 609h18"/>
+    <path d="M34 627h18" stroke-dasharray="4 3.5"/>
+  </g>
+  <text x="60" y="613" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="11.5" fill="#35634e">Plan maintenance from measured condition</text>
+  <text x="60" y="631" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="11.5" fill="#35634e">Adapt sampling and radio schedules</text>
+</svg>

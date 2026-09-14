@@ -13,7 +13,7 @@ links:
     url: https://www.ce.cit.tum.de/en/lis/persons/management/thomas-wild/
 ---
 
-Thomas Wild studies hardware-assisted system optimisation, power modelling and management for multicore processors, and traffic steering in edge networks.
+Thomas Wild studies hardware-assisted system optimization, power modeling and management for multicore processors, and traffic steering in edge networks.
 
 At the Chair of Integrated Systems, he supervises theses and internships carried out in industry. He is also the EUROPRACTICE representative for TUM’s city campus.
 

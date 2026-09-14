@@ -1,11 +1,11 @@
 ---
-title: Optimal asymmetric communication protocol at ACM CoNEXT 2026 
+title: Optimal asymmetric communication protocol at ACM CoNEXT 2026
 date: 2026-09-14T10:00:00+02:00
-description: News and research from the Sustainable Cyber-Physical Systems Focus Group at TUM.
-tags: [neighbor-discovery,asymmetric-communication,energy-harvesting,publications]
+description: Our CoNEXT paper gives schedules that let duty-cycled devices discover each other at the lowest possible mean latency for the energy they can spend.
+tags: [publications, neighbor-discovery, energy-harvesting]
+references: [kindt2026asymmetric]
 hero: ../../assets/img/blog/asymmetric-neighbor-discovery/neighborDiscovery.png
-heroAlt: Asymmetric Neighbor Discovery Procedure
-bibliography: kindt2026asymmetric.bib
+heroAlt: Two radio boards, A and B, exchanging beacons until they find each other, over three steps, Radio A scans, Radio B responds, and the two discover each other
 ---
 Our paper on optimal asymmetric communication and neighbor discovery has been accepted at ACM CoNEXT 2026.
 

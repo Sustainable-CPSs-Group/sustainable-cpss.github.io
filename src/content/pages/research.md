@@ -22,7 +22,7 @@ Our current work on low-power communication and anomaly detection contributes to
 
 Harvesting energy from light or vibration could allow sensors to operate without replacing batteries. Available energy varies, however, and a device may lose power during a computation or wake while its receiver is asleep. Sensing, local inference, and communication must fit within the same limited energy budget.
 
-We study lightweight models that detect unusual behaviour close to the sensor. Sending a short summary or an anomaly report instead of a continuous stream of raw measurements could reduce radio use. The challenge is to retain enough information for a reliable diagnosis.
+We study lightweight models that detect unusual behavior close to the sensor. Sending a short summary or an anomaly report instead of a continuous stream of raw measurements could reduce radio use. The challenge is to retain enough information for a reliable diagnosis.
 
 Our [predictive-maintenance case study](/blog/2026/predictive-maintenance-without-maintenance/) examines vibration sensing and small learning models for this setting. Its experiments use a battery-powered sensor and run inference on a laptop; a complete batteryless monitoring system remains a research goal.
 
@@ -34,7 +34,7 @@ Intermittent power introduces a further question: when is maintaining or restori
 
 ## Connectionless reporting
 
-The first direction concerns sensors that initiate a report when they have useful data and enough energy. Without a persistent connection or synchronised clocks, the sender’s transmissions may miss the receiver’s listening windows. Repeated attempts cost energy, and nearby senders can collide.
+The first direction concerns sensors that initiate a report when they have useful data and enough energy. Without a persistent connection or synchronized clocks, the sender’s transmissions may miss the receiver’s listening windows. Repeated attempts cost energy, and nearby senders can collide.
 
 We rely on **Coverage Maps** to reason about which relative timings between a sender and receiver allow a packet to arrive. The aim is to design transmission and listening schedules with predictable delivery times for a given energy budget, then extend them to changing energy availability and multiple senders. We will also examine when acknowledgements and information about recent channel use can avoid unnecessary transmissions.
 
@@ -42,9 +42,9 @@ We rely on **Coverage Maps** to reason about which relative timings between a se
 
 The second direction places more coordination at a server with a stable power supply. A low-power wake-up receiver would let a sensor keep its main radio off until it receives an addressed instruction specifying when, on which channel, and at what power to transmit. A sensor without enough harvested energy would wait for another opportunity.
 
-We plan to use **Grant Maps** to describe the transmission opportunities offered to each sensor and analyse access delays under stated energy and interference assumptions. The scheduler would account for missed opportunities and changing channel conditions, while balancing routine monitoring with urgent traffic.
+We plan to use **Grant Maps** to describe the transmission opportunities offered to each sensor and analyze access delays under stated energy and interference assumptions. The scheduler would account for missed opportunities and changing channel conditions, while balancing routine monitoring with urgent traffic.
 
-For example, an anomaly report could trigger extra transmission opportunities for the reporting sensor and its neighbours. An engineer investigating a particular machine could request the same focused monitoring. The research question is how to respond quickly while maintaining service for the rest of the network.
+For example, an anomaly report could trigger extra transmission opportunities for the reporting sensor and its neighbors. An engineer investigating a particular machine could request the same focused monitoring. The research question is how to respond quickly while maintaining service for the rest of the network.
 
 ## AI-assisted diagnostics with human input
 

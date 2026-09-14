@@ -1,103 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="640" viewBox="0 0 1400 640" role="img" aria-labelledby="title description">
-  <title id="title">Sustainable CPS in a robot workcell</title>
-  <desc id="description">Illustrative research scenario. Sensors attached to a robot arm monitor vibration and temperature. Harvested energy supports intermittent sensing and local inference. Low-power wireless communication sends useful reports to AI and an engineer, who can request more measurements and plan maintenance. The complete batteryless system is a research goal.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="512" viewBox="0 0 1080 512" role="img" aria-labelledby="title description">
+  <title id="title">Self-powered condition monitoring across three example systems</title>
+  <desc id="description">Illustrative research scenario. Self-powered sensors are attached to three example systems: a robot arm, a building hull and a bridge. Harvested energy supports sensing and local inference across power cycles. Low-power communication carries reports only when there is something to say. AI and an engineer review the evidence, adapt sampling and radio schedules, and plan maintenance. The complete batteryless system is a research goal.</desc>
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 9 5 1 9" fill="none" stroke="#35634e" stroke-width="1.5"/></marker>
-    <marker id="energy-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 9 5 1 9" fill="none" stroke="#98763c" stroke-width="1.5"/></marker>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M1.5 1.5 9 5 1.5 8.5" fill="none" stroke="#35634e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
   </defs>
-  <rect width="1400" height="640" fill="#fcfcfa"/>
-  <g id="workcell">
-    <rect x="40" y="40" width="684" height="516" rx="5" fill="#f1f4ef" stroke="#d5ded5"/>
-    <text x="62" y="71" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#626b65" letter-spacing="1">ROBOT ARM WITH ATTACHED SENSORS</text>
-    <g id="workcell-floor" stroke="#cbd5ca" fill="none">
-      <path d="M62 486h640" stroke-width="2"/>
-      <path d="M90 486l-14 14M124 486l-14 14M158 486l-14 14M192 486l-14 14M226 486l-14 14M260 486l-14 14M294 486l-14 14M328 486l-14 14M362 486l-14 14M396 486l-14 14M430 486l-14 14M464 486l-14 14M498 486l-14 14M532 486l-14 14M566 486l-14 14M600 486l-14 14M634 486l-14 14M668 486l-14 14M702 486l-14 14" stroke-width="1.5" stroke-opacity=".7"/>
-    </g>
-    <g id="conveyor" stroke="#839286" stroke-width="2" fill="#e4eae3" stroke-linejoin="round">
-      <path d="M488 412h10v74h-10ZM672 412h10v74h-10Z" fill="#dbe2da"/>
-      <rect x="470" y="388" width="230" height="24"/>
-      <path d="M494 400a8 8 0 1 0-16 0 8 8 0 1 0 16 0M520 400a8 8 0 1 0-16 0 8 8 0 1 0 16 0M546 400a8 8 0 1 0-16 0 8 8 0 1 0 16 0M572 400a8 8 0 1 0-16 0 8 8 0 1 0 16 0M598 400a8 8 0 1 0-16 0 8 8 0 1 0 16 0M624 400a8 8 0 1 0-16 0 8 8 0 1 0 16 0M650 400a8 8 0 1 0-16 0 8 8 0 1 0 16 0M676 400a8 8 0 1 0-16 0 8 8 0 1 0 16 0" fill="#f1f4ef" stroke-width="1.2" stroke-opacity=".85"/>
-      <rect x="470" y="372" width="230" height="16" fill="#eef2ed"/>
-      <rect x="586" y="338" width="28" height="34" rx="2" fill="#d2dfce"/>
-    </g>
-    <g id="robot-arm" stroke="#526f5b" stroke-width="3" stroke-linejoin="round">
-      <g id="robot-base">
-        <path d="M178 486h144l-16-44H194Z" fill="#c8d6c6"/>
-        <rect x="206" y="398" width="88" height="44" rx="6" fill="#d0dccd"/>
-      </g>
-      <g id="robot-links">
-        <path id="upper-arm" d="M270.6 405.7L338.6 223.7A22 22 0 0 0 297.4 208.3L229.4 390.3A22 22 0 0 0 270.6 405.7Z" fill="#dce5d8"/>
-        <path id="forearm" d="M320.5 233.8L522.5 205.8A18 18 0 0 0 517.5 170.2L315.5 198.2A18 18 0 0 0 320.5 233.8Z" fill="#e2e8dd"/>
-        <path id="wrist-link" d="M513.5 200.4L593.5 242.4A14 14 0 0 0 606.5 217.6L526.5 175.6A14 14 0 0 0 513.5 200.4Z" fill="#d8e2d4"/>
-        <path id="tool-flange" d="M589 230L589 262A11 11 0 0 0 611 262L611 230A11 11 0 0 0 589 230Z" fill="#dce5d8"/>
-      </g>
-      <g id="gripper" fill="#d8e2d4">
-        <rect x="570" y="262" width="60" height="16" rx="3"/>
-        <path d="M570 278h12v52h-12ZM618 278h12v52h-12Z"/>
-      </g>
-      <g id="robot-joints" fill="#c4d3c1">
-        <circle cx="250" cy="398" r="27"/>
-        <circle cx="318" cy="216" r="30"/>
-        <circle cx="520" cy="188" r="24"/>
-        <circle cx="600" cy="230" r="19"/>
-      </g>
-      <g id="joint-hubs" fill="#f5f7f1" stroke-width="2.2">
-        <circle cx="250" cy="398" r="10"/>
-        <circle cx="318" cy="216" r="11"/>
-        <circle cx="520" cy="188" r="9"/>
-        <circle cx="600" cy="230" r="7"/>
-      </g>
-    </g>
-    <g id="attached-sensors" fill="#28634f" stroke="#fcfcfa" stroke-width="2">
-      <g transform="rotate(20.5 283.8 244.7)"><rect x="272.8" y="231.2" width="22" height="27" rx="3"/></g>
-      <g transform="rotate(82.1 461 178)"><rect x="450" y="164.5" width="22" height="27" rx="3"/></g>
-      <circle cx="283.8" cy="244.7" r="2.5" fill="#fcfcfa" stroke="none"/>
-      <circle cx="461" cy="178" r="2.5" fill="#fcfcfa" stroke="none"/>
-    </g>
-    <g id="sensor-callout" fill="none" stroke="#35634e" stroke-width="1.5">
-      <path d="M272 232 212 172H92"/>
-    </g>
-    <text x="92" y="164" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#27332f">Vibration and temperature</text>
-    <g id="energy-harvesting" stroke="#98763c" stroke-width="1.7" fill="none" stroke-linecap="round">
-      <circle cx="104" cy="300" r="12"/><path d="M104 276v5m0 38v5m-24-24h5m38 0h5m-41-17 4 4m26 26 4 4m0-34-4 4m-26 26-4 4"/>
-      <path d="M82 330h44l-8 24H74Zm-4 12h44m-25-12-8 24m22-24-8 24"/>
-      <path d="M129 342h61v-94h76" marker-end="url(#energy-arrow)"/>
-    </g>
-    <text x="73" y="383" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#745b30">Harvest light</text>
-    <text x="73" y="404" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#745b30">or vibration</text>
-    <text x="73" y="538" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#626b65">Monitor a joint for signs of wear.</text>
+  <rect width="1080" height="512" fill="#fcfcfa"/>
+  <g id="example-1">
+    <rect x="38" y="26" width="424" height="128" rx="3" fill="#f3f4ef" stroke="#dce3df"/>
+    <path d="M190 52V128" stroke="#dce3df" stroke-width="1" fill="none"/>
+    <text x="206" y="74" font-family="Georgia, &quot;Times New Roman&quot;, serif" font-size="19" fill="#27332f">Robot arm</text>
+    <text x="206" y="102" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="14" fill="#626b65">Joint vibration and temperature</text>
+    <text x="206" y="122" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="14" fill="#626b65">reveal developing wear.</text>
+    <g transform="translate(50 34) scale(1.0000)"><g stroke="#4f6b5c" stroke-width="1.7" stroke-linejoin="round"><path d="M0 96H126" stroke="#c3cec5" fill="none"/><path d="M14 96h40l-6-14H20Z" fill="#ccd9cd"/><rect x="22" y="60" width="24" height="22" rx="3" fill="#dbe4db"/><path d="M40 62.4L56 22.4A6.5 6.5 0 0 0 44 17.6L28 57.6A6.5 6.5 0 0 0 40 62.4Z" fill="#dbe4db"/><path d="M50.7 25.4L94.7 19.4A5.5 5.5 0 0 0 93.3 8.6L49.3 14.6A5.5 5.5 0 0 0 50.7 25.4Z" fill="#e9eee7"/><path d="M90.9 17.1L104.9 31.1A4.4 4.4 0 0 0 111.1 24.9L97.1 10.9A4.4 4.4 0 0 0 90.9 17.1Z" fill="#dbe4db"/><path d="M104.4 28L104.4 38A3.6 3.6 0 0 0 111.6 38L111.6 28A3.6 3.6 0 0 0 104.4 28Z" fill="#e9eee7"/><rect x="99" y="38" width="18" height="6" rx="2" fill="#dbe4db"/><path d="M100.5 44v7l3.5 4M115.5 44v7l-3.5 4" fill="none" stroke-linecap="round"/><circle cx="34" cy="60" r="8.5" fill="#ccd9cd"/><circle cx="50" cy="20" r="7.5" fill="#ccd9cd"/><circle cx="94" cy="14" r="6" fill="#ccd9cd"/><circle cx="108" cy="28" r="5" fill="#ccd9cd"/><circle cx="34" cy="60" r="3.4" fill="#fcfcfa" stroke-width="1.2"/><circle cx="50" cy="20" r="3" fill="#fcfcfa" stroke-width="1.2"/><circle cx="94" cy="14" r="2.4" fill="#fcfcfa" stroke-width="1.2"/><circle cx="108" cy="28" r="2" fill="#fcfcfa" stroke-width="1.2"/></g><g transform="rotate(22 43.6 36)"><rect x="36.6" y="27.5" width="14" height="17" rx="3.5" fill="#244b3e" stroke="#fcfcfa" stroke-width="2.2"/><path d="M45.5 30.4L41.7 36.6L44 36.6L42.4 41.6L46.1 35.4L44 35.4Z" fill="#e3a63c" stroke="none"/></g></g>
   </g>
-  <g id="reports-to-sensor-model" fill="none" stroke="#35634e" stroke-width="1.6">
-    <path d="M455 164V97h307" marker-end="url(#arrow)"/>
+  <g id="example-2">
+    <rect x="38" y="170" width="424" height="128" rx="3" fill="#f3f4ef" stroke="#dce3df"/>
+    <path d="M190 196V272" stroke="#dce3df" stroke-width="1" fill="none"/>
+    <text x="206" y="218" font-family="Georgia, &quot;Times New Roman&quot;, serif" font-size="19" fill="#27332f">Building hull</text>
+    <text x="206" y="246" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="14" fill="#626b65">Envelope temperature and humidity</text>
+    <text x="206" y="266" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="14" fill="#626b65">reveal heat loss and moisture.</text>
+    <g transform="translate(50 178) scale(1.0000)"><g stroke="#4f6b5c" stroke-width="1.7" stroke-linejoin="round"><path d="M0 96H126" stroke="#c3cec5" fill="none"/><path d="M13 96V2H113V96" fill="none" stroke="#c3cec5" stroke-width="1.3" stroke-dasharray="3.5 3.5"/><path d="M24 16h78v80H24Z" fill="#dbe4db"/><path d="M18 8h90v9H18Z" fill="#ccd9cd"/><rect x="32" y="28" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="1.3"/><rect x="56" y="28" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="1.3"/><rect x="80" y="28" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="1.3"/><rect x="32" y="52" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="1.3"/><rect x="56" y="52" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="1.3"/><rect x="80" y="52" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="1.3"/><path d="M53 96v-20h20v20" fill="#e9eee7"/></g><g transform="rotate(0 24 52)"><rect x="17" y="43.5" width="14" height="17" rx="3.5" fill="#244b3e" stroke="#fcfcfa" stroke-width="2.2"/><path d="M25.9 46.4L22.1 52.6L24.4 52.6L22.8 57.6L26.5 51.4L24.4 51.4Z" fill="#e3a63c" stroke="none"/></g></g>
   </g>
-  <g id="sensor-processing">
-    <rect x="774" y="40" width="586" height="130" rx="5" fill="#ffffff" stroke="#cedbd2"/>
-    <text x="798" y="90" font-family="Georgia, Times New Roman, serif" font-size="23" fill="#27332f">1. Sense with the energy available</text>
-    <text x="798" y="126" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#27332f">Sensing and local inference continue across power cycles.</text>
+  <g id="example-3">
+    <rect x="38" y="314" width="424" height="128" rx="3" fill="#f3f4ef" stroke="#dce3df"/>
+    <path d="M190 340V416" stroke="#dce3df" stroke-width="1" fill="none"/>
+    <text x="206" y="362" font-family="Georgia, &quot;Times New Roman&quot;, serif" font-size="19" fill="#27332f">Bridge</text>
+    <text x="206" y="390" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="14" fill="#626b65">Deck vibration and strain</text>
+    <text x="206" y="410" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="14" fill="#626b65">reveal fatigue and damage.</text>
+    <g transform="translate(50 322) scale(1.0000)"><g stroke="#4f6b5c" stroke-width="1.7" stroke-linejoin="round"><path d="M0 96H126" stroke="#c3cec5" fill="none"/><path d="M18 70Q63 26 108 70" fill="none"/><path d="M34 57.1V70M48.5 50.3V70M63 48V70M77.5 50.3V70M92 57.1V70" fill="none" stroke-width="1.2"/><path d="M26 79h11v17H26ZM89 79h11v17H89Z" fill="#ccd9cd"/><path d="M6 70h114v9H6Z" fill="#dbe4db"/></g><g transform="rotate(0 63 88)"><rect x="56" y="79.5" width="14" height="17" rx="3.5" fill="#244b3e" stroke="#fcfcfa" stroke-width="2.2"/><path d="M64.9 82.4L61.1 88.6L63.4 88.6L61.8 93.6L65.5 87.4L63.4 87.4Z" fill="#e3a63c" stroke="none"/></g></g>
   </g>
-  <path d="M1067 170v43" fill="none" stroke="#35634e" stroke-width="1.6" marker-end="url(#arrow)"/>
-  <g id="wireless-network">
-    <rect x="774" y="213" width="586" height="130" rx="5" fill="#ffffff" stroke="#cedbd2"/>
-    <text x="798" y="263" font-family="Georgia, Times New Roman, serif" font-size="23" fill="#27332f">2. Communicate what matters</text>
-    <text x="798" y="299" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#27332f">Low-power communication, used only when there is something to report.</text>
+  <g id="merge" fill="none" stroke="#35634e" stroke-width="1.6">
+    <path d="M462 90H496"/>
+    <path d="M462 234H496"/>
+    <path d="M462 378H496"/>
+    <path d="M496 378V90H546" marker-end="url(#arrow)"/>
   </g>
-  <path d="M1067 343v43" fill="none" stroke="#35634e" stroke-width="1.6" marker-end="url(#arrow)"/>
-  <g id="diagnostics-and-engineer">
-    <rect x="774" y="386" width="586" height="130" rx="5" fill="#ffffff" stroke="#cedbd2"/>
-    <g id="engineer-and-display" transform="translate(1258 416)" stroke="#526f5b" stroke-width="2" fill="none" stroke-linejoin="round">
-      <rect x="0" y="4" width="47" height="34" rx="3"/><path d="M8 27h7l6-13 7 18 7-11h5M23 38v10m-13 0h26"/>
-      <circle cx="63" cy="36" r="8"/><path d="M51 63v-6a12 12 0 0 1 24 0v6"/>
-    </g>
-    <text x="798" y="436" font-family="Georgia, Times New Roman, serif" font-size="23" fill="#27332f">3. Diagnose with an engineer</text>
-    <text x="798" y="472" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#27332f">AI and an engineer review the evidence together.</text>
+  <g fill="#35634e" stroke="none">
+    <circle cx="496" cy="90" r="3"/>
+    <circle cx="496" cy="234" r="3"/>
+    <circle cx="496" cy="378" r="3"/>
   </g>
-  <g id="feedback-to-sensors" fill="none" stroke="#35634e" stroke-width="1.6" stroke-dasharray="5 4">
-    <path d="M774 460h-26V124H471v48" marker-end="url(#arrow)"/>
+  <g id="sensing">
+    <rect x="546" y="26" width="458" height="128" rx="3" fill="#ffffff" stroke="#dce3df"/>
+    <text x="574" y="72" font-family="Georgia, &quot;Times New Roman&quot;, serif" font-size="20" fill="#27332f">1. Sense with the energy available</text>
+    <text x="574" y="102" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="14" fill="#626b65">Harvested energy powers sensing and local</text>
+    <text x="574" y="122" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="14" fill="#626b65">inference across power cycles.</text>
+    <g transform="translate(944 90) scale(1.0000)" stroke="#4f6b5c" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="-17" y="-25" width="34" height="30" rx="3" fill="#e9eee7"/><path d="M-23-18h6M-23-10h6M-23-2h6M17-18h6M17-10h6M17-2h6"/><path d="M2.5 -17.6L-2.5 -9.2L0.5 -9.2L-1.7 -2.4L3.4 -10.8L0.5 -10.8Z" fill="#e3a63c" stroke="none"/><path d="M-24 21h5v-11h8v11h5M10 21h4v-11h8v11h4"/><path d="M-4 21h10" stroke="#c3cec5" stroke-dasharray="2 3"/></g>
   </g>
-  <text x="556" y="152" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#35634e">Adapt sampling</text>
-  <text x="556" y="171" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#35634e">and radio schedules</text>
-  <g id="maintenance-feedback" fill="none" stroke="#35634e" stroke-width="1.6">
-    <path d="M1112 516v94H452v-152" marker-end="url(#arrow)"/>
+  <path d="M775 154V170" fill="none" stroke="#35634e" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <g id="communication">
+    <rect x="546" y="170" width="458" height="128" rx="3" fill="#ffffff" stroke="#dce3df"/>
+    <text x="574" y="216" font-family="Georgia, &quot;Times New Roman&quot;, serif" font-size="20" fill="#27332f">2. Communicate what matters</text>
+    <text x="574" y="246" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="14" fill="#626b65">Low-power communication, used only when</text>
+    <text x="574" y="266" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="14" fill="#626b65">there is something to report.</text>
+    <g transform="translate(944 234) scale(1.0000)" stroke="#4f6b5c" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="-24" y="-9" width="15" height="18" rx="3" fill="#dbe4db"/><path d="M-6.1 -12.6A16 16 0 0 1 -6.1 12.6"/><path d="M-0.6 -19.7A25 25 0 0 1 -0.6 19.7"/><circle cx="16" cy="0" r="3" fill="#244b3e" stroke="none"/></g>
   </g>
-  <text x="782" y="602" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#35634e">Plan maintenance from measured condition</text>
+  <path d="M775 298V314" fill="none" stroke="#35634e" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <g id="diagnosis">
+    <rect x="546" y="314" width="458" height="128" rx="3" fill="#ffffff" stroke="#dce3df"/>
+    <text x="574" y="360" font-family="Georgia, &quot;Times New Roman&quot;, serif" font-size="20" fill="#27332f">3. Diagnose with an engineer</text>
+    <text x="574" y="390" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="14" fill="#626b65">AI and an engineer review the evidence together.</text>
+    <g transform="translate(944 378) scale(1.0000)" stroke="#4f6b5c" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="-27" y="-20" width="38" height="28" rx="3" fill="#e9eee7"/><path d="M-21-7h5l5-10 5 14 5-8h4"/><path d="M-8 8v8m-8 0h16"/><circle cx="24" cy="-6" r="6.5"/><path d="M14 16v-4a10 10 0 0 1 20 0v4"/></g>
+  </g>
+  <path id="adapt" d="M1004 378H1030V90H1004" fill="none" stroke="#35634e" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+  <text x="1056" y="234" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="12.5" fill="#35634e" text-anchor="middle" transform="rotate(-90 1056 234)">Adapt sampling and radio schedules</text>
+  <g id="maintenance" fill="none" stroke="#35634e" stroke-width="1.6">
+    <path d="M775 442V484H16V90"/>
+    <path d="M16 90H38" marker-end="url(#arrow)"/>
+    <path d="M16 234H38" marker-end="url(#arrow)"/>
+    <path d="M16 378H38" marker-end="url(#arrow)"/>
+  </g>
+  <text x="396" y="472" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="13.5" text-anchor="middle" fill="#35634e">Plan maintenance from measured condition</text>
 </svg>
