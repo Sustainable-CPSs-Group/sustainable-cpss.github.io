@@ -44,7 +44,7 @@ With 3 usable channels, the probability of two piconets choosing the same channe
 
 ## Choosing the connection interval
 
-We derive a closed-form latency bound and use it to find the largest connection interval that satisfies a given `maxwait` budget and retransmission allowance. Under the power model, this interval minimises radio power while meeting the specified timing constraints.
+We derive a closed-form latency bound and use it to find the largest connection interval that satisfies a given `maxwait` budget and retransmission allowance. Under the power model, this interval minimizes radio power while meeting the specified timing constraints.
 
 For a representative condition-monitoring link, we use a 250 ms `maxwait` budget, 10 ms for packet handling, 5 ms of clock error, 2 ms of stack overhead, no fragmentation, and 3 retransmissions. The method selects **`CI* = 57.5 ms`**, with a calculated worst-case delay of 247 ms.
 
@@ -63,7 +63,7 @@ We implemented the transport as a BLE `NetworkChannel` for Reactor-UC using Zeph
 - The connection interval, peripheral latency, and fragmentation must remain fixed during the connection. The transport sets these parameters when the connection opens.
 - The analysis covers a single link. Selecting intervals for a central device serving several peripherals requires additional scheduling work.
 - The power estimates use Nordic’s power profiler for an nRF52840 and still need hardware validation.
-- The packet-loss measurements used a controlled environment. Further experiments are needed to characterise failures under uncontrolled interference.
+- The packet-loss measurements used a controlled environment. Further experiments are needed to characterize failures under uncontrolled interference.
 
 These limits define the next steps in evaluating the transport for practical deployments.
 
