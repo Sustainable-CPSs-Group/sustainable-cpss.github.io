@@ -1,19 +1,31 @@
 ---
 import { Image } from "astro:assets";
 import { getEntry } from "astro:content";
-import robotWorkcell from "../assets/img/project-overview/robot-workcell.svg";
+import wideFigure from "../assets/img/project-overview/robot-workcell.svg";
+import narrowFigure from "../assets/img/project-overview/robot-workcell-mobile.svg";
 
 const overview = await getEntry("pages", "overview");
 if (!overview) throw new Error("Missing project overview content");
 ---
 
 <figure class="project-overview shell" aria-labelledby="overview-caption">
-  <Image src={robotWorkcell} alt={overview.data.description} loading="eager" fetchpriority="high" />
+  <picture>
+    {/* The wide figure is drawn at the 1080px shell width. On a phone it would scale to about a
+        third of that and its body text would land near 5px, so a stacked layout takes over. */}
+    <source
+      media="(max-width: 700px)"
+      srcset={narrowFigure.src}
+      width={narrowFigure.width}
+      height={narrowFigure.height}
+    />
+    <Image src={wideFigure} alt={overview.data.description} loading="eager" fetchpriority="high" />
+  </picture>
   <figcaption id="overview-caption">{overview.data.title}</figcaption>
 </figure>
 
 <style>
   .project-overview { margin-block: 0 2.5rem; padding-block: .75rem 1rem; border-block: 1px solid var(--line); }
+  .project-overview picture { display: block; }
   .project-overview img { display: block; width: 100%; height: auto; }
   figcaption { border-top: 1px solid var(--line); margin-top: .75rem; padding-top: 1rem; font-size: .88rem; line-height: 1.65; color: var(--muted); }
 </style>

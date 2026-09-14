@@ -16,7 +16,7 @@ Predictive maintenance depends on observations of how machines behave over time.
 
 Those sensors also need power. Batteries require replacement, which becomes costly across a large installation and can be impractical in sealed or inaccessible locations. Wiring introduces installation costs and limits where sensors can be placed.
 
-We investigate an alternative: sensors that harvest ambient energy, analyse measurements locally, and report signs of a developing fault. The paper presents a small vibration-classification case study and discusses the work needed to turn this approach into a batteryless system.
+We investigate an alternative: sensors that harvest ambient energy, analyze measurements locally, and report signs of a developing fault. The paper presents a small vibration-classification case study and discusses the work needed to turn this approach into a batteryless system.
 
 ![Left, an industrial production line with several battery-free sensor nodes in active, charging and no-power states. Right, the fan case study pipeline from vibration signal to real-time fault classification.](../../assets/img/blog/predictive-maintenance/architecture.png)
 
@@ -26,11 +26,11 @@ We investigate an alternative: sensors that harvest ambient energy, analyse meas
 
 A batteryless node may have to wait until it has stored enough energy before sensing or transmitting. When it wakes, its receiver may be asleep. Sensing, computation, and communication therefore need to be planned together.
 
-For communication, we propose sending compact reports when measurements suggest an anomaly or when a diagnostic query requests information. Neighbour-discovery schedules, which combine short beacons with brief listening windows, offer a way for nodes to find each other without maintaining a continuously synchronised connection.
+For communication, we propose sending compact reports when measurements suggest an anomaly or when a diagnostic query requests information. Neighbor-discovery schedules, which combine short beacons with brief listening windows, offer a way for nodes to find each other without maintaining a continuously synchronized connection.
 
 Adapting these schedules to harvested energy remains an open problem. Existing deterministic discovery guarantees assume a fixed energy budget and schedule. A harvesting node’s available energy changes with its surroundings. We need protocols that can adjust to those changes while retaining useful bounds on discovery time.
 
-For computation, a simple local detector could screen routine observations. A possible anomaly could trigger a more accurate model, an exchange of features with neighbouring nodes, or a report to a remote system. This would let the node reserve more expensive processing and communication for observations that need further analysis.
+For computation, a simple local detector could screen routine observations. A possible anomaly could trigger a more accurate model, an exchange of features with neighboring nodes, or a report to a remote system. This would let the node reserve more expensive processing and communication for observations that need further analysis.
 
 ## A vibration-classification case study
 

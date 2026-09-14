@@ -13,6 +13,7 @@
     <text x="206" y="74" font-family="Georgia, &quot;Times New Roman&quot;, serif" font-size="19" fill="#27332f">Robot arm</text>
     <text x="206" y="102" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="14" fill="#626b65">Joint vibration and temperature</text>
     <text x="206" y="122" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="14" fill="#626b65">reveal developing wear.</text>
+    <g transform="translate(50 34) scale(1.0000)"><g stroke="#4f6b5c" stroke-width="1.7" stroke-linejoin="round"><path d="M0 96H126" stroke="#c3cec5" fill="none"/><path d="M14 96h40l-6-14H20Z" fill="#ccd9cd"/><rect x="22" y="60" width="24" height="22" rx="3" fill="#dbe4db"/><path d="M40 62.4L56 22.4A6.5 6.5 0 0 0 44 17.6L28 57.6A6.5 6.5 0 0 0 40 62.4Z" fill="#dbe4db"/><path d="M50.7 25.4L94.7 19.4A5.5 5.5 0 0 0 93.3 8.6L49.3 14.6A5.5 5.5 0 0 0 50.7 25.4Z" fill="#e9eee7"/><path d="M90.9 17.1L104.9 31.1A4.4 4.4 0 0 0 111.1 24.9L97.1 10.9A4.4 4.4 0 0 0 90.9 17.1Z" fill="#dbe4db"/><path d="M104.4 28L104.4 38A3.6 3.6 0 0 0 111.6 38L111.6 28A3.6 3.6 0 0 0 104.4 28Z" fill="#e9eee7"/><rect x="99" y="38" width="18" height="6" rx="2" fill="#dbe4db"/><path d="M100.5 44v7l3.5 4M115.5 44v7l-3.5 4" fill="none" stroke-linecap="round"/><circle cx="34" cy="60" r="8.5" fill="#ccd9cd"/><circle cx="50" cy="20" r="7.5" fill="#ccd9cd"/><circle cx="94" cy="14" r="6" fill="#ccd9cd"/><circle cx="108" cy="28" r="5" fill="#ccd9cd"/><circle cx="34" cy="60" r="3.4" fill="#fcfcfa" stroke-width="1.2"/><circle cx="50" cy="20" r="3" fill="#fcfcfa" stroke-width="1.2"/><circle cx="94" cy="14" r="2.4" fill="#fcfcfa" stroke-width="1.2"/><circle cx="108" cy="28" r="2" fill="#fcfcfa" stroke-width="1.2"/></g><g transform="rotate(22 43.6 36)"><rect x="36.6" y="27.5" width="14" height="17" rx="3.5" fill="#244b3e" stroke="#fcfcfa" stroke-width="2.2"/><path d="M45.5 30.4L41.7 36.6L44 36.6L42.4 41.6L46.1 35.4L44 35.4Z" fill="#e3a63c" stroke="none"/></g></g>
   </g>
   <g id="example-2">
     <rect x="38" y="170" width="424" height="128" rx="3" fill="#f3f4ef" stroke="#dce3df"/>
@@ -20,6 +21,7 @@
     <text x="206" y="218" font-family="Georgia, &quot;Times New Roman&quot;, serif" font-size="19" fill="#27332f">Building hull</text>
     <text x="206" y="246" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="14" fill="#626b65">Envelope temperature and humidity</text>
     <text x="206" y="266" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="14" fill="#626b65">reveal heat loss and moisture.</text>
+    <g transform="translate(50 178) scale(1.0000)"><g stroke="#4f6b5c" stroke-width="1.7" stroke-linejoin="round"><path d="M0 96H126" stroke="#c3cec5" fill="none"/><path d="M13 96V2H113V96" fill="none" stroke="#c3cec5" stroke-width="1.3" stroke-dasharray="3.5 3.5"/><path d="M24 16h78v80H24Z" fill="#dbe4db"/><path d="M18 8h90v9H18Z" fill="#ccd9cd"/><rect x="32" y="28" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="1.3"/><rect x="56" y="28" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="1.3"/><rect x="80" y="28" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="1.3"/><rect x="32" y="52" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="1.3"/><rect x="56" y="52" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="1.3"/><rect x="80" y="52" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="1.3"/><path d="M53 96v-20h20v20" fill="#e9eee7"/></g><g transform="rotate(0 24 52)"><rect x="17" y="43.5" width="14" height="17" rx="3.5" fill="#244b3e" stroke="#fcfcfa" stroke-width="2.2"/><path d="M25.9 46.4L22.1 52.6L24.4 52.6L22.8 57.6L26.5 51.4L24.4 51.4Z" fill="#e3a63c" stroke="none"/></g></g>
   </g>
   <g id="example-3">
     <rect x="38" y="314" width="424" height="128" rx="3" fill="#f3f4ef" stroke="#dce3df"/>
@@ -27,49 +29,8 @@
     <text x="206" y="362" font-family="Georgia, &quot;Times New Roman&quot;, serif" font-size="19" fill="#27332f">Bridge</text>
     <text x="206" y="390" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="14" fill="#626b65">Deck vibration and strain</text>
     <text x="206" y="410" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="14" fill="#626b65">reveal fatigue and damage.</text>
+    <g transform="translate(50 322) scale(1.0000)"><g stroke="#4f6b5c" stroke-width="1.7" stroke-linejoin="round"><path d="M0 96H126" stroke="#c3cec5" fill="none"/><path d="M18 70Q63 26 108 70" fill="none"/><path d="M34 57.1V70M48.5 50.3V70M63 48V70M77.5 50.3V70M92 57.1V70" fill="none" stroke-width="1.2"/><path d="M26 79h11v17H26ZM89 79h11v17H89Z" fill="#ccd9cd"/><path d="M6 70h114v9H6Z" fill="#dbe4db"/></g><g transform="rotate(0 63 88)"><rect x="56" y="79.5" width="14" height="17" rx="3.5" fill="#244b3e" stroke="#fcfcfa" stroke-width="2.2"/><path d="M64.9 82.4L61.1 88.6L63.4 88.6L61.8 93.6L65.5 87.4L63.4 87.4Z" fill="#e3a63c" stroke="none"/></g></g>
   </g>
-  <g id="art-robot" stroke="#4f6b5c" stroke-width="1.7" stroke-linejoin="round">
-    <path d="M50 130H176" stroke="#c3cec5" fill="none"/>
-    <path d="M64 130h40l-6-14H70Z" fill="#ccd9cd"/>
-    <rect x="72" y="94" width="24" height="22" rx="3" fill="#dbe4db"/>
-    <path d="M90 96.4L106 56.4A6.5 6.5 0 0 0 94 51.6L78 91.6A6.5 6.5 0 0 0 90 96.4Z" fill="#dbe4db"/>
-    <path d="M100.7 59.4L144.7 53.4A5.5 5.5 0 0 0 143.3 42.6L99.3 48.6A5.5 5.5 0 0 0 100.7 59.4Z" fill="#e9eee7"/>
-    <path d="M140.9 51.1L154.9 65.1A4.4 4.4 0 0 0 161.1 58.9L147.1 44.9A4.4 4.4 0 0 0 140.9 51.1Z" fill="#dbe4db"/>
-    <path d="M154.4 62L154.4 72A3.6 3.6 0 0 0 161.6 72L161.6 62A3.6 3.6 0 0 0 154.4 62Z" fill="#e9eee7"/>
-    <rect x="149" y="72" width="18" height="6" rx="2" fill="#dbe4db"/>
-    <path d="M150.5 78v7l3.5 4M165.5 78v7l-3.5 4" fill="none" stroke-linecap="round"/>
-    <circle cx="84" cy="94" r="8.5" fill="#ccd9cd"/>
-    <circle cx="100" cy="54" r="7.5" fill="#ccd9cd"/>
-    <circle cx="144" cy="48" r="6" fill="#ccd9cd"/>
-    <circle cx="158" cy="62" r="5" fill="#ccd9cd"/>
-    <circle cx="84" cy="94" r="3.4" fill="#fcfcfa" stroke-width="1.2"/>
-    <circle cx="100" cy="54" r="3" fill="#fcfcfa" stroke-width="1.2"/>
-    <circle cx="144" cy="48" r="2.4" fill="#fcfcfa" stroke-width="1.2"/>
-    <circle cx="158" cy="62" r="2" fill="#fcfcfa" stroke-width="1.2"/>
-  </g>
-  <g transform="rotate(22 93.6 70)"><rect x="86.6" y="61.5" width="14" height="17" rx="3.5" fill="#244b3e" stroke="#fcfcfa" stroke-width="2.2"/><path d="M95.5 64.4L91.7 70.6L94 70.6L92.4 75.6L96.1 69.4L94 69.4Z" fill="#e3a63c" stroke="none"/></g>
-  <g id="art-building" stroke="#4f6b5c" stroke-width="1.7" stroke-linejoin="round">
-    <path d="M50 274H176" stroke="#c3cec5" fill="none"/>
-    <path d="M63 274V180H163V274" fill="none" stroke="#c3cec5" stroke-width="1.3" stroke-dasharray="3.5 3.5"/>
-    <path d="M74 194h78v80H74Z" fill="#dbe4db"/>
-    <path d="M68 186h90v9H68Z" fill="#ccd9cd"/>
-    <rect x="82" y="206" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="1.3"/>
-    <rect x="106" y="206" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="1.3"/>
-    <rect x="130" y="206" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="1.3"/>
-    <rect x="82" y="230" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="1.3"/>
-    <rect x="106" y="230" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="1.3"/>
-    <rect x="130" y="230" width="16" height="14" rx="1" fill="#dde5e7" stroke-width="1.3"/>
-    <path d="M103 274v-20h20v20" fill="#e9eee7"/>
-  </g>
-  <g transform="rotate(0 74 230)"><rect x="67" y="221.5" width="14" height="17" rx="3.5" fill="#244b3e" stroke="#fcfcfa" stroke-width="2.2"/><path d="M75.9 224.4L72.1 230.6L74.4 230.6L72.8 235.6L76.5 229.4L74.4 229.4Z" fill="#e3a63c" stroke="none"/></g>
-  <g id="art-bridge" stroke="#4f6b5c" stroke-width="1.7" stroke-linejoin="round">
-    <path d="M50 418H176" stroke="#c3cec5" fill="none"/>
-    <path d="M68 392Q113 348 158 392" fill="none"/>
-    <path d="M84 379.1V392M98.5 372.3V392M113 370V392M127.5 372.3V392M142 379.1V392" fill="none" stroke-width="1.2"/>
-    <path d="M76 401h11v17H76ZM139 401h11v17h-11Z" fill="#ccd9cd"/>
-    <path d="M56 392h114v9H56Z" fill="#dbe4db"/>
-  </g>
-  <g transform="rotate(0 113 410)"><rect x="106" y="401.5" width="14" height="17" rx="3.5" fill="#244b3e" stroke="#fcfcfa" stroke-width="2.2"/><path d="M114.9 404.4L111.1 410.6L113.4 410.6L111.8 415.6L115.5 409.4L113.4 409.4Z" fill="#e3a63c" stroke="none"/></g>
   <g id="merge" fill="none" stroke="#35634e" stroke-width="1.6">
     <path d="M462 90H496"/>
     <path d="M462 234H496"/>
@@ -86,13 +47,7 @@
     <text x="574" y="72" font-family="Georgia, &quot;Times New Roman&quot;, serif" font-size="20" fill="#27332f">1. Sense with the energy available</text>
     <text x="574" y="102" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="14" fill="#626b65">Harvested energy powers sensing and local</text>
     <text x="574" y="122" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="14" fill="#626b65">inference across power cycles.</text>
-    <g transform="translate(944 90)" stroke="#4f6b5c" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="-17" y="-25" width="34" height="30" rx="3" fill="#e9eee7"/>
-      <path d="M-23-18h6M-23-10h6M-23-2h6M17-18h6M17-10h6M17-2h6"/>
-      <path d="M2.5 -17.6L-2.5 -9.2L0.5 -9.2L-1.7 -2.4L3.4 -10.8L0.5 -10.8Z" fill="#e3a63c" stroke="none"/>
-      <path d="M-24 21h5v-11h8v11h5M10 21h4v-11h8v11h4"/>
-      <path d="M-4 21h10" stroke="#c3cec5" stroke-dasharray="2 3"/>
-    </g>
+    <g transform="translate(944 90) scale(1.0000)" stroke="#4f6b5c" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="-17" y="-25" width="34" height="30" rx="3" fill="#e9eee7"/><path d="M-23-18h6M-23-10h6M-23-2h6M17-18h6M17-10h6M17-2h6"/><path d="M2.5 -17.6L-2.5 -9.2L0.5 -9.2L-1.7 -2.4L3.4 -10.8L0.5 -10.8Z" fill="#e3a63c" stroke="none"/><path d="M-24 21h5v-11h8v11h5M10 21h4v-11h8v11h4"/><path d="M-4 21h10" stroke="#c3cec5" stroke-dasharray="2 3"/></g>
   </g>
   <path d="M775 154V170" fill="none" stroke="#35634e" stroke-width="1.6" marker-end="url(#arrow)"/>
   <g id="communication">
@@ -100,29 +55,16 @@
     <text x="574" y="216" font-family="Georgia, &quot;Times New Roman&quot;, serif" font-size="20" fill="#27332f">2. Communicate what matters</text>
     <text x="574" y="246" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="14" fill="#626b65">Low-power communication, used only when</text>
     <text x="574" y="266" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="14" fill="#626b65">there is something to report.</text>
-    <g transform="translate(944 234)" stroke="#4f6b5c" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="-24" y="-9" width="15" height="18" rx="3" fill="#dbe4db"/>
-      <path d="M-6.1 -12.6A16 16 0 0 1 -6.1 12.6"/>
-      <path d="M-0.6 -19.7A25 25 0 0 1 -0.6 19.7"/>
-      <circle cx="16" cy="0" r="3" fill="#244b3e" stroke="none"/>
-    </g>
+    <g transform="translate(944 234) scale(1.0000)" stroke="#4f6b5c" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="-24" y="-9" width="15" height="18" rx="3" fill="#dbe4db"/><path d="M-6.1 -12.6A16 16 0 0 1 -6.1 12.6"/><path d="M-0.6 -19.7A25 25 0 0 1 -0.6 19.7"/><circle cx="16" cy="0" r="3" fill="#244b3e" stroke="none"/></g>
   </g>
   <path d="M775 298V314" fill="none" stroke="#35634e" stroke-width="1.6" marker-end="url(#arrow)"/>
   <g id="diagnosis">
     <rect x="546" y="314" width="458" height="128" rx="3" fill="#ffffff" stroke="#dce3df"/>
     <text x="574" y="360" font-family="Georgia, &quot;Times New Roman&quot;, serif" font-size="20" fill="#27332f">3. Diagnose with an engineer</text>
     <text x="574" y="390" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="14" fill="#626b65">AI and an engineer review the evidence together.</text>
-    <g transform="translate(944 378)" stroke="#4f6b5c" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="-27" y="-20" width="38" height="28" rx="3" fill="#e9eee7"/>
-      <path d="M-21-7h5l5-10 5 14 5-8h4"/>
-      <path d="M-8 8v8m-8 0h16"/>
-      <circle cx="24" cy="-6" r="6.5"/>
-      <path d="M14 16v-4a10 10 0 0 1 20 0v4"/>
-    </g>
+    <g transform="translate(944 378) scale(1.0000)" stroke="#4f6b5c" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="-27" y="-20" width="38" height="28" rx="3" fill="#e9eee7"/><path d="M-21-7h5l5-10 5 14 5-8h4"/><path d="M-8 8v8m-8 0h16"/><circle cx="24" cy="-6" r="6.5"/><path d="M14 16v-4a10 10 0 0 1 20 0v4"/></g>
   </g>
-  <g id="adapt" fill="none" stroke="#35634e" stroke-width="1.6" stroke-dasharray="5 4">
-    <path d="M1004 378H1030V90H1004" marker-end="url(#arrow)"/>
-  </g>
+  <path id="adapt" d="M1004 378H1030V90H1004" fill="none" stroke="#35634e" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
   <text x="1056" y="234" font-family="ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif" font-size="12.5" fill="#35634e" text-anchor="middle" transform="rotate(-90 1056 234)">Adapt sampling and radio schedules</text>
   <g id="maintenance" fill="none" stroke="#35634e" stroke-width="1.6">
     <path d="M775 442V484H16V90"/>

@@ -14,7 +14,7 @@ links:
     url: https://www.professoren.tum.de/en/herkersdorf-andreas
 ---
 
-Andreas Herkersdorf studies computer architectures for application-specific multicore processors, FPGA prototyping, and system design methods. His interests include bio-inspired and self-organising multiprocessor systems, error tolerance, and energy efficiency.
+Andreas Herkersdorf studies computer architectures for application-specific multicore processors, FPGA prototyping, and system design methods. His interests include bio-inspired and self-organizing multiprocessor systems, error tolerance, and energy efficiency.
 
 He studied electrical engineering at TUM and received his doctorate from ETH Zurich in 1991. He then spent more than a decade at the IBM Zurich Research Laboratory, where he later managed network processor hardware development. He has led the Chair of Integrated Systems since 2003 and serves as a DFG expert reviewer for computer architecture.
 

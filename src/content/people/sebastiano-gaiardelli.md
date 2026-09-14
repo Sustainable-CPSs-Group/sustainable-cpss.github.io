@@ -19,8 +19,8 @@ links:
     url: https://github.com/sbgaia
 ---
 
-Sebastiano Gaiardelli develops methods for optimising, reconfiguring, and verifying cyber-physical production systems.
+Sebastiano Gaiardelli develops methods for optimizing, reconfiguring, and verifying cyber-physical production systems.
 
-He received his Ph.D. in Computer Science from the University of Verona in 2025. His dissertation examined the verification and optimisation of flexible manufacturing systems. He previously completed an M.Sc. in Computer Science and Engineering with a focus on embedded systems. He co-founded FACTORYAL S.r.l., a factory automation software spin-off of the University of Verona, where he serves as scientific advisor.
+He received his Ph.D. in Computer Science from the University of Verona in 2025. His dissertation examined the verification and optimization of flexible manufacturing systems. He previously completed an M.Sc. in Computer Science and Engineering with a focus on embedded systems. He co-founded FACTORYAL S.r.l., a factory automation software spin-off of the University of Verona, where he serves as scientific advisor.
 
 Within the group, Sebastiano works on deterministic coordination in distributed embedded systems.
